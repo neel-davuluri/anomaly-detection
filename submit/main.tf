@@ -16,7 +16,7 @@ provider "aws" {
 
 variable "bucket_name" {
   type        = string
-  default     = "ds5220-dp1-anomaly-detection"
+  default     = "ds5220-dp1-xbk9fh"
   description = "Globally unique S3 bucket name — append your UVA ID to make it unique"
 }
 
