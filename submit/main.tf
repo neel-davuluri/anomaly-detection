@@ -114,7 +114,7 @@ resource "aws_security_group" "anomaly_sg" {
 
 resource "aws_instance" "anomaly_instance" {
   # Ubuntu 24.04 LTS (us-east-1) — verify current AMI ID before deploying
-  ami                    = "ami-084568db4383264d4"
+  ami                    = "ami-0b6c6ebed2801a5cb"
   instance_type          = "t3.micro"
   key_name               = var.ssh_key_name
   iam_instance_profile   = aws_iam_instance_profile.ec2_profile.name
