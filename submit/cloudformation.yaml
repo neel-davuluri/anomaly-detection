@@ -13,7 +13,7 @@ Parameters:
 
   BucketName:
     Type: String
-    Default: "ds5220-dp1-anomaly-detection"
+    Default: "ds5220-dp1-xbk9fh"
     Description: >
       Name for the S3 bucket. Must be globally unique — append your UVA
       computing ID or similar to make it unique (e.g. ds5220-dp1-abc2de).
