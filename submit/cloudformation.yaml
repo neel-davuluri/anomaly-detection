@@ -88,7 +88,7 @@ Resources:
         - IpProtocol: tcp
           FromPort: 22
           ToPort: 22
-          CidrIp: "104.145.79.42/32"   # YOUR IP — update if it changes
+          CidrIp: "104.145.79.42/32"  
         - IpProtocol: tcp
           FromPort: 8000
           ToPort: 8000
@@ -98,7 +98,7 @@ Resources:
   AnomalyInstance:
     Type: AWS::EC2::Instance
     Properties:
-      ImageId: "ami-084568db4383264d4"   # Ubuntu 24.04 LTS (us-east-1) — verify current AMI
+      ImageId: "ami-084568db4383264d4"   # Ubuntu 24.04 LTS (us-east-1)
       InstanceType: t3.micro
       KeyName: !Ref SSHKeyName
       IamInstanceProfile: !Ref EC2InstanceProfile
