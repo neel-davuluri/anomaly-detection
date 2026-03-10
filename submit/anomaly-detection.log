@@ -1,0 +1,1164 @@
+2026-03-09 20:06:51,012 [INFO] Application started. Using bucket: ds5220-dp1-xbk9fh
+2026-03-09 20:06:51,261 [INFO] Started server process [4139]
+2026-03-09 20:06:51,262 [INFO] Waiting for application startup.
+2026-03-09 20:06:51,263 [INFO] Application startup complete.
+2026-03-09 20:06:51,264 [INFO] Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2026-03-09 20:06:54,589 [INFO] Received SNS message type: SubscriptionConfirmation
+2026-03-09 20:06:54,728 [INFO] SNS subscription confirmed via: https://sns.us-east-1.amazonaws.com/?Action=ConfirmSubscription&TopicArn=arn:aws:sns:us-east-1:211125630349:ds5220-dp1&Token=2336412f37fb687f5d51e6e2425929f52e8e353ee0e292f3fcc2f8f25e88548571b64dc774f53591aa936ffb71a5bfd32380d446b2939cc05bcc4a5f789647ab8b771584a10b8b79aa63ef5c89d4f8f87e451037aac9c2ae87e36137d8f671d661e866e63a424005ab63bb20b62a3e78
+2026-03-09 20:14:22,122 [INFO] Received SNS message type: Notification
+2026-03-09 20:14:22,122 [INFO] New file arrived: raw/sensors_20260309T201420.csv — dispatching background task
+2026-03-09 20:14:22,124 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T201420.csv
+2026-03-09 20:14:22,239 [INFO] Loaded 100 rows from raw/sensors_20260309T201420.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:14:22,304 [INFO] No existing baseline found — starting fresh.
+2026-03-09 20:14:22,336 [INFO] Baseline updated for channel 'temperature': count=100, mean=21.9559, std=1.7152
+2026-03-09 20:14:22,337 [INFO] Baseline updated for channel 'humidity': count=100, mean=54.2413, std=5.6899
+2026-03-09 20:14:22,337 [INFO] Baseline updated for channel 'pressure': count=100, mean=1012.3177, std=4.4521
+2026-03-09 20:14:22,337 [INFO] Baseline updated for channel 'wind_speed': count=100, mean=9.5314, std=2.8994
+2026-03-09 20:14:22,368 [INFO] Z-score check for 'temperature': 1 flags (threshold=3.0)
+2026-03-09 20:14:22,369 [INFO] Z-score check for 'humidity': 1 flags (threshold=3.0)
+2026-03-09 20:14:22,370 [INFO] Z-score check for 'pressure': 3 flags (threshold=3.0)
+2026-03-09 20:14:22,371 [INFO] Z-score check for 'wind_speed': 0 flags (threshold=3.0)
+2026-03-09 20:14:22,530 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:14:22,532 [INFO] Detection complete: 6/100 rows flagged as anomalies
+2026-03-09 20:14:22,602 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T201420.csv
+2026-03-09 20:14:22,628 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:14:22,659 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:14:22,690 [INFO] Processing complete for raw/sensors_20260309T201420.csv: 6/100 anomalies flagged. Summary written to processed/sensors_20260309T201420_summary.json
+2026-03-09 20:15:23,576 [INFO] Received SNS message type: Notification
+2026-03-09 20:15:23,576 [INFO] New file arrived: raw/sensors_20260309T201521.csv — dispatching background task
+2026-03-09 20:15:23,578 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T201521.csv
+2026-03-09 20:15:23,648 [INFO] Loaded 100 rows from raw/sensors_20260309T201521.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:15:23,742 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:15:23,742 [INFO] Baseline updated for channel 'temperature': count=200, mean=21.8430, std=1.7596
+2026-03-09 20:15:23,743 [INFO] Baseline updated for channel 'humidity': count=200, mean=54.5986, std=6.9274
+2026-03-09 20:15:23,743 [INFO] Baseline updated for channel 'pressure': count=200, mean=1012.4593, std=4.2458
+2026-03-09 20:15:23,743 [INFO] Baseline updated for channel 'wind_speed': count=200, mean=9.9558, std=2.8557
+2026-03-09 20:15:23,744 [INFO] Z-score check for 'temperature': 1 flags (threshold=3.0)
+2026-03-09 20:15:23,745 [INFO] Z-score check for 'humidity': 2 flags (threshold=3.0)
+2026-03-09 20:15:23,746 [INFO] Z-score check for 'pressure': 2 flags (threshold=3.0)
+2026-03-09 20:15:23,747 [INFO] Z-score check for 'wind_speed': 0 flags (threshold=3.0)
+2026-03-09 20:15:23,897 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:15:23,900 [INFO] Detection complete: 6/100 rows flagged as anomalies
+2026-03-09 20:15:23,994 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T201521.csv
+2026-03-09 20:15:24,023 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:15:24,135 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:15:24,162 [INFO] Processing complete for raw/sensors_20260309T201521.csv: 6/100 anomalies flagged. Summary written to processed/sensors_20260309T201521_summary.json
+2026-03-09 20:16:23,994 [INFO] Received SNS message type: Notification
+2026-03-09 20:16:23,994 [INFO] New file arrived: raw/sensors_20260309T201622.csv — dispatching background task
+2026-03-09 20:16:23,995 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T201622.csv
+2026-03-09 20:16:24,065 [INFO] Loaded 100 rows from raw/sensors_20260309T201622.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:16:24,140 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:16:24,140 [INFO] Baseline updated for channel 'temperature': count=300, mean=21.8520, std=1.9226
+2026-03-09 20:16:24,141 [INFO] Baseline updated for channel 'humidity': count=300, mean=54.4467, std=6.5734
+2026-03-09 20:16:24,141 [INFO] Baseline updated for channel 'pressure': count=300, mean=1012.9181, std=3.9792
+2026-03-09 20:16:24,141 [INFO] Baseline updated for channel 'wind_speed': count=300, mean=10.0852, std=3.0100
+2026-03-09 20:16:24,143 [INFO] Z-score check for 'temperature': 1 flags (threshold=3.0)
+2026-03-09 20:16:24,144 [INFO] Z-score check for 'humidity': 1 flags (threshold=3.0)
+2026-03-09 20:16:24,144 [INFO] Z-score check for 'pressure': 1 flags (threshold=3.0)
+2026-03-09 20:16:24,145 [INFO] Z-score check for 'wind_speed': 2 flags (threshold=3.0)
+2026-03-09 20:16:24,296 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:16:24,299 [INFO] Detection complete: 5/100 rows flagged as anomalies
+2026-03-09 20:16:24,332 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T201622.csv
+2026-03-09 20:16:24,359 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:16:24,413 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:16:24,442 [INFO] Processing complete for raw/sensors_20260309T201622.csv: 5/100 anomalies flagged. Summary written to processed/sensors_20260309T201622_summary.json
+2026-03-09 20:17:24,678 [INFO] Received SNS message type: Notification
+2026-03-09 20:17:24,678 [INFO] New file arrived: raw/sensors_20260309T201723.csv — dispatching background task
+2026-03-09 20:17:24,680 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T201723.csv
+2026-03-09 20:17:24,753 [INFO] Loaded 100 rows from raw/sensors_20260309T201723.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:17:24,846 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:17:24,847 [INFO] Baseline updated for channel 'temperature': count=400, mean=21.8264, std=1.8977
+2026-03-09 20:17:24,847 [INFO] Baseline updated for channel 'humidity': count=400, mean=54.6956, std=6.2882
+2026-03-09 20:17:24,848 [INFO] Baseline updated for channel 'pressure': count=400, mean=1013.0020, std=3.7235
+2026-03-09 20:17:24,848 [INFO] Baseline updated for channel 'wind_speed': count=400, mean=9.9878, std=3.1743
+2026-03-09 20:17:24,849 [INFO] Z-score check for 'temperature': 2 flags (threshold=3.0)
+2026-03-09 20:17:24,850 [INFO] Z-score check for 'humidity': 1 flags (threshold=3.0)
+2026-03-09 20:17:24,851 [INFO] Z-score check for 'pressure': 0 flags (threshold=3.0)
+2026-03-09 20:17:24,852 [INFO] Z-score check for 'wind_speed': 2 flags (threshold=3.0)
+2026-03-09 20:17:25,010 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:17:25,013 [INFO] Detection complete: 6/100 rows flagged as anomalies
+2026-03-09 20:17:25,055 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T201723.csv
+2026-03-09 20:17:25,105 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:17:25,133 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:17:25,183 [INFO] Processing complete for raw/sensors_20260309T201723.csv: 6/100 anomalies flagged. Summary written to processed/sensors_20260309T201723_summary.json
+2026-03-09 20:18:25,031 [INFO] Received SNS message type: Notification
+2026-03-09 20:18:25,032 [INFO] New file arrived: raw/sensors_20260309T201823.csv — dispatching background task
+2026-03-09 20:18:25,033 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T201823.csv
+2026-03-09 20:18:25,116 [INFO] Loaded 100 rows from raw/sensors_20260309T201823.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:18:25,185 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:18:25,185 [INFO] Baseline updated for channel 'temperature': count=500, mean=21.8195, std=1.9457
+2026-03-09 20:18:25,186 [INFO] Baseline updated for channel 'humidity': count=500, mean=54.6863, std=6.7474
+2026-03-09 20:18:25,186 [INFO] Baseline updated for channel 'pressure': count=500, mean=1013.0656, std=3.5974
+2026-03-09 20:18:25,186 [INFO] Baseline updated for channel 'wind_speed': count=500, mean=9.9387, std=3.0246
+2026-03-09 20:18:25,187 [INFO] Z-score check for 'temperature': 2 flags (threshold=3.0)
+2026-03-09 20:18:25,188 [INFO] Z-score check for 'humidity': 3 flags (threshold=3.0)
+2026-03-09 20:18:25,189 [INFO] Z-score check for 'pressure': 0 flags (threshold=3.0)
+2026-03-09 20:18:25,190 [INFO] Z-score check for 'wind_speed': 0 flags (threshold=3.0)
+2026-03-09 20:18:25,341 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:18:25,344 [INFO] Detection complete: 7/100 rows flagged as anomalies
+2026-03-09 20:18:25,375 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T201823.csv
+2026-03-09 20:18:25,402 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:18:25,433 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:18:25,464 [INFO] Processing complete for raw/sensors_20260309T201823.csv: 7/100 anomalies flagged. Summary written to processed/sensors_20260309T201823_summary.json
+2026-03-09 20:19:25,418 [INFO] Received SNS message type: Notification
+2026-03-09 20:19:25,418 [INFO] New file arrived: raw/sensors_20260309T201923.csv — dispatching background task
+2026-03-09 20:19:25,419 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T201923.csv
+2026-03-09 20:19:25,493 [INFO] Loaded 100 rows from raw/sensors_20260309T201923.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:19:25,608 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:19:25,609 [INFO] Baseline updated for channel 'temperature': count=600, mean=21.8377, std=1.8965
+2026-03-09 20:19:25,609 [INFO] Baseline updated for channel 'humidity': count=600, mean=54.8434, std=6.6585
+2026-03-09 20:19:25,609 [INFO] Baseline updated for channel 'pressure': count=600, mean=1013.0487, std=3.5647
+2026-03-09 20:19:25,610 [INFO] Baseline updated for channel 'wind_speed': count=600, mean=10.0405, std=3.1254
+2026-03-09 20:19:25,611 [INFO] Z-score check for 'temperature': 1 flags (threshold=3.0)
+2026-03-09 20:19:25,612 [INFO] Z-score check for 'humidity': 1 flags (threshold=3.0)
+2026-03-09 20:19:25,613 [INFO] Z-score check for 'pressure': 1 flags (threshold=3.0)
+2026-03-09 20:19:25,614 [INFO] Z-score check for 'wind_speed': 2 flags (threshold=3.0)
+2026-03-09 20:19:25,767 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:19:25,770 [INFO] Detection complete: 5/100 rows flagged as anomalies
+2026-03-09 20:19:25,797 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T201923.csv
+2026-03-09 20:19:25,838 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:19:25,888 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:19:25,916 [INFO] Processing complete for raw/sensors_20260309T201923.csv: 5/100 anomalies flagged. Summary written to processed/sensors_20260309T201923_summary.json
+2026-03-09 20:20:26,127 [INFO] Received SNS message type: Notification
+2026-03-09 20:20:26,127 [INFO] New file arrived: raw/sensors_20260309T202024.csv — dispatching background task
+2026-03-09 20:20:26,128 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T202024.csv
+2026-03-09 20:20:26,201 [INFO] Loaded 100 rows from raw/sensors_20260309T202024.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:20:26,272 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:20:26,273 [INFO] Baseline updated for channel 'temperature': count=700, mean=21.8709, std=1.9090
+2026-03-09 20:20:26,273 [INFO] Baseline updated for channel 'humidity': count=700, mean=54.7716, std=6.5310
+2026-03-09 20:20:26,274 [INFO] Baseline updated for channel 'pressure': count=700, mean=1012.9542, std=3.5266
+2026-03-09 20:20:26,274 [INFO] Baseline updated for channel 'wind_speed': count=700, mean=10.0827, std=3.2433
+2026-03-09 20:20:26,275 [INFO] Z-score check for 'temperature': 2 flags (threshold=3.0)
+2026-03-09 20:20:26,276 [INFO] Z-score check for 'humidity': 1 flags (threshold=3.0)
+2026-03-09 20:20:26,277 [INFO] Z-score check for 'pressure': 0 flags (threshold=3.0)
+2026-03-09 20:20:26,278 [INFO] Z-score check for 'wind_speed': 2 flags (threshold=3.0)
+2026-03-09 20:20:26,433 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:20:26,436 [INFO] Detection complete: 6/100 rows flagged as anomalies
+2026-03-09 20:20:26,469 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T202024.csv
+2026-03-09 20:20:26,496 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:20:26,529 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:20:26,559 [INFO] Processing complete for raw/sensors_20260309T202024.csv: 6/100 anomalies flagged. Summary written to processed/sensors_20260309T202024_summary.json
+2026-03-09 20:21:26,553 [INFO] Received SNS message type: Notification
+2026-03-09 20:21:26,553 [INFO] New file arrived: raw/sensors_20260309T202124.csv — dispatching background task
+2026-03-09 20:21:26,555 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T202124.csv
+2026-03-09 20:21:26,633 [INFO] Loaded 100 rows from raw/sensors_20260309T202124.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:21:26,701 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:21:26,702 [INFO] Baseline updated for channel 'temperature': count=800, mean=21.8564, std=1.8683
+2026-03-09 20:21:26,702 [INFO] Baseline updated for channel 'humidity': count=800, mean=54.5913, std=6.3247
+2026-03-09 20:21:26,702 [INFO] Baseline updated for channel 'pressure': count=800, mean=1012.9315, std=3.6851
+2026-03-09 20:21:26,703 [INFO] Baseline updated for channel 'wind_speed': count=800, mean=9.9873, std=3.2034
+2026-03-09 20:21:26,704 [INFO] Z-score check for 'temperature': 1 flags (threshold=3.0)
+2026-03-09 20:21:26,705 [INFO] Z-score check for 'humidity': 0 flags (threshold=3.0)
+2026-03-09 20:21:26,706 [INFO] Z-score check for 'pressure': 2 flags (threshold=3.0)
+2026-03-09 20:21:26,707 [INFO] Z-score check for 'wind_speed': 2 flags (threshold=3.0)
+2026-03-09 20:21:26,857 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:21:26,860 [INFO] Detection complete: 5/100 rows flagged as anomalies
+2026-03-09 20:21:26,892 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T202124.csv
+2026-03-09 20:21:26,923 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:21:26,957 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:21:26,987 [INFO] Processing complete for raw/sensors_20260309T202124.csv: 5/100 anomalies flagged. Summary written to processed/sensors_20260309T202124_summary.json
+2026-03-09 20:22:26,866 [INFO] Received SNS message type: Notification
+2026-03-09 20:22:26,866 [INFO] New file arrived: raw/sensors_20260309T202225.csv — dispatching background task
+2026-03-09 20:22:26,867 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T202225.csv
+2026-03-09 20:22:26,937 [INFO] Loaded 100 rows from raw/sensors_20260309T202225.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:22:27,008 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:22:27,009 [INFO] Baseline updated for channel 'temperature': count=900, mean=21.8544, std=1.8748
+2026-03-09 20:22:27,009 [INFO] Baseline updated for channel 'humidity': count=900, mean=54.5095, std=6.3477
+2026-03-09 20:22:27,010 [INFO] Baseline updated for channel 'pressure': count=900, mean=1013.0086, std=3.7454
+2026-03-09 20:22:27,010 [INFO] Baseline updated for channel 'wind_speed': count=900, mean=9.9782, std=3.1632
+2026-03-09 20:22:27,011 [INFO] Z-score check for 'temperature': 1 flags (threshold=3.0)
+2026-03-09 20:22:27,012 [INFO] Z-score check for 'humidity': 1 flags (threshold=3.0)
+2026-03-09 20:22:27,013 [INFO] Z-score check for 'pressure': 2 flags (threshold=3.0)
+2026-03-09 20:22:27,014 [INFO] Z-score check for 'wind_speed': 1 flags (threshold=3.0)
+2026-03-09 20:22:27,169 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:22:27,172 [INFO] Detection complete: 5/100 rows flagged as anomalies
+2026-03-09 20:22:27,200 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T202225.csv
+2026-03-09 20:22:27,231 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:22:27,261 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:22:27,289 [INFO] Processing complete for raw/sensors_20260309T202225.csv: 5/100 anomalies flagged. Summary written to processed/sensors_20260309T202225_summary.json
+2026-03-09 20:23:27,315 [INFO] Received SNS message type: Notification
+2026-03-09 20:23:27,315 [INFO] New file arrived: raw/sensors_20260309T202325.csv — dispatching background task
+2026-03-09 20:23:27,316 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T202325.csv
+2026-03-09 20:23:27,412 [INFO] Loaded 100 rows from raw/sensors_20260309T202325.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:23:27,483 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:23:27,484 [INFO] Baseline updated for channel 'temperature': count=1000, mean=21.8782, std=1.8465
+2026-03-09 20:23:27,484 [INFO] Baseline updated for channel 'humidity': count=1000, mean=54.5538, std=6.3058
+2026-03-09 20:23:27,484 [INFO] Baseline updated for channel 'pressure': count=1000, mean=1012.9943, std=3.8968
+2026-03-09 20:23:27,485 [INFO] Baseline updated for channel 'wind_speed': count=1000, mean=9.9766, std=3.1790
+2026-03-09 20:23:27,486 [INFO] Z-score check for 'temperature': 0 flags (threshold=3.0)
+2026-03-09 20:23:27,487 [INFO] Z-score check for 'humidity': 1 flags (threshold=3.0)
+2026-03-09 20:23:27,488 [INFO] Z-score check for 'pressure': 2 flags (threshold=3.0)
+2026-03-09 20:23:27,489 [INFO] Z-score check for 'wind_speed': 2 flags (threshold=3.0)
+2026-03-09 20:23:27,640 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:23:27,642 [INFO] Detection complete: 5/100 rows flagged as anomalies
+2026-03-09 20:23:27,694 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T202325.csv
+2026-03-09 20:23:27,723 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:23:27,752 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:23:27,802 [INFO] Processing complete for raw/sensors_20260309T202325.csv: 5/100 anomalies flagged. Summary written to processed/sensors_20260309T202325_summary.json
+2026-03-09 20:24:27,999 [INFO] Received SNS message type: Notification
+2026-03-09 20:24:27,999 [INFO] New file arrived: raw/sensors_20260309T202426.csv — dispatching background task
+2026-03-09 20:24:28,001 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T202426.csv
+2026-03-09 20:24:28,074 [INFO] Loaded 100 rows from raw/sensors_20260309T202426.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:24:28,171 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:24:28,172 [INFO] Baseline updated for channel 'temperature': count=1100, mean=21.8858, std=1.8172
+2026-03-09 20:24:28,172 [INFO] Baseline updated for channel 'humidity': count=1100, mean=54.6309, std=6.2370
+2026-03-09 20:24:28,173 [INFO] Baseline updated for channel 'pressure': count=1100, mean=1012.9841, std=4.0512
+2026-03-09 20:24:28,173 [INFO] Baseline updated for channel 'wind_speed': count=1100, mean=9.9810, std=3.1184
+2026-03-09 20:24:28,174 [INFO] Z-score check for 'temperature': 0 flags (threshold=3.0)
+2026-03-09 20:24:28,175 [INFO] Z-score check for 'humidity': 2 flags (threshold=3.0)
+2026-03-09 20:24:28,176 [INFO] Z-score check for 'pressure': 3 flags (threshold=3.0)
+2026-03-09 20:24:28,177 [INFO] Z-score check for 'wind_speed': 0 flags (threshold=3.0)
+2026-03-09 20:24:28,328 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:24:28,331 [INFO] Detection complete: 8/100 rows flagged as anomalies
+2026-03-09 20:24:28,362 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T202426.csv
+2026-03-09 20:24:28,393 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:24:28,428 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:24:28,456 [INFO] Processing complete for raw/sensors_20260309T202426.csv: 8/100 anomalies flagged. Summary written to processed/sensors_20260309T202426_summary.json
+2026-03-09 20:25:27,510 [INFO] Received SNS message type: Notification
+2026-03-09 20:25:27,510 [INFO] New file arrived: raw/sensors_20260309T202526.csv — dispatching background task
+2026-03-09 20:25:27,511 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T202526.csv
+2026-03-09 20:25:27,580 [INFO] Loaded 100 rows from raw/sensors_20260309T202526.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:25:27,678 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:25:27,679 [INFO] Baseline updated for channel 'temperature': count=1200, mean=21.8974, std=1.8647
+2026-03-09 20:25:27,679 [INFO] Baseline updated for channel 'humidity': count=1200, mean=54.6433, std=6.0885
+2026-03-09 20:25:27,680 [INFO] Baseline updated for channel 'pressure': count=1200, mean=1012.9834, std=3.9959
+2026-03-09 20:25:27,680 [INFO] Baseline updated for channel 'wind_speed': count=1200, mean=9.9173, std=3.1429
+2026-03-09 20:25:27,681 [INFO] Z-score check for 'temperature': 3 flags (threshold=3.0)
+2026-03-09 20:25:27,682 [INFO] Z-score check for 'humidity': 0 flags (threshold=3.0)
+2026-03-09 20:25:27,683 [INFO] Z-score check for 'pressure': 1 flags (threshold=3.0)
+2026-03-09 20:25:27,684 [INFO] Z-score check for 'wind_speed': 1 flags (threshold=3.0)
+2026-03-09 20:25:27,832 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:25:27,835 [INFO] Detection complete: 6/100 rows flagged as anomalies
+2026-03-09 20:25:27,869 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T202526.csv
+2026-03-09 20:25:27,899 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:25:27,927 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:25:27,952 [INFO] Processing complete for raw/sensors_20260309T202526.csv: 6/100 anomalies flagged. Summary written to processed/sensors_20260309T202526_summary.json
+2026-03-09 20:26:29,152 [INFO] Received SNS message type: Notification
+2026-03-09 20:26:29,152 [INFO] New file arrived: raw/sensors_20260309T202626.csv — dispatching background task
+2026-03-09 20:26:29,154 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T202626.csv
+2026-03-09 20:26:29,238 [INFO] Loaded 100 rows from raw/sensors_20260309T202626.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:26:29,321 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:26:29,321 [INFO] Baseline updated for channel 'temperature': count=1300, mean=21.9014, std=1.8692
+2026-03-09 20:26:29,322 [INFO] Baseline updated for channel 'humidity': count=1300, mean=54.6314, std=6.0706
+2026-03-09 20:26:29,322 [INFO] Baseline updated for channel 'pressure': count=1300, mean=1012.9522, std=3.9345
+2026-03-09 20:26:29,322 [INFO] Baseline updated for channel 'wind_speed': count=1300, mean=9.9609, std=3.2145
+2026-03-09 20:26:29,324 [INFO] Z-score check for 'temperature': 1 flags (threshold=3.0)
+2026-03-09 20:26:29,325 [INFO] Z-score check for 'humidity': 1 flags (threshold=3.0)
+2026-03-09 20:26:29,326 [INFO] Z-score check for 'pressure': 0 flags (threshold=3.0)
+2026-03-09 20:26:29,327 [INFO] Z-score check for 'wind_speed': 3 flags (threshold=3.0)
+2026-03-09 20:26:29,480 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:26:29,483 [INFO] Detection complete: 6/100 rows flagged as anomalies
+2026-03-09 20:26:29,510 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T202626.csv
+2026-03-09 20:26:29,568 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:26:29,608 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:26:29,636 [INFO] Processing complete for raw/sensors_20260309T202626.csv: 6/100 anomalies flagged. Summary written to processed/sensors_20260309T202626_summary.json
+2026-03-09 20:27:28,590 [INFO] Received SNS message type: Notification
+2026-03-09 20:27:28,590 [INFO] New file arrived: raw/sensors_20260309T202727.csv — dispatching background task
+2026-03-09 20:27:28,592 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T202727.csv
+2026-03-09 20:27:28,668 [INFO] Loaded 100 rows from raw/sensors_20260309T202727.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:27:28,744 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:27:28,744 [INFO] Baseline updated for channel 'temperature': count=1400, mean=21.9105, std=1.8785
+2026-03-09 20:27:28,745 [INFO] Baseline updated for channel 'humidity': count=1400, mean=54.7408, std=6.0374
+2026-03-09 20:27:28,745 [INFO] Baseline updated for channel 'pressure': count=1400, mean=1012.9548, std=3.9406
+2026-03-09 20:27:28,745 [INFO] Baseline updated for channel 'wind_speed': count=1400, mean=9.9717, std=3.2263
+2026-03-09 20:27:28,747 [INFO] Z-score check for 'temperature': 1 flags (threshold=3.0)
+2026-03-09 20:27:28,748 [INFO] Z-score check for 'humidity': 0 flags (threshold=3.0)
+2026-03-09 20:27:28,749 [INFO] Z-score check for 'pressure': 2 flags (threshold=3.0)
+2026-03-09 20:27:28,750 [INFO] Z-score check for 'wind_speed': 2 flags (threshold=3.0)
+2026-03-09 20:27:28,902 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:27:28,904 [INFO] Detection complete: 5/100 rows flagged as anomalies
+2026-03-09 20:27:28,936 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T202727.csv
+2026-03-09 20:27:28,970 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:27:29,085 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:27:29,115 [INFO] Processing complete for raw/sensors_20260309T202727.csv: 5/100 anomalies flagged. Summary written to processed/sensors_20260309T202727_summary.json
+2026-03-09 20:28:29,237 [INFO] Received SNS message type: Notification
+2026-03-09 20:28:29,237 [INFO] New file arrived: raw/sensors_20260309T202827.csv — dispatching background task
+2026-03-09 20:28:29,239 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T202827.csv
+2026-03-09 20:28:29,318 [INFO] Loaded 100 rows from raw/sensors_20260309T202827.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:28:29,390 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:28:29,391 [INFO] Baseline updated for channel 'temperature': count=1500, mean=21.9280, std=1.9182
+2026-03-09 20:28:29,391 [INFO] Baseline updated for channel 'humidity': count=1500, mean=54.7454, std=6.1790
+2026-03-09 20:28:29,391 [INFO] Baseline updated for channel 'pressure': count=1500, mean=1012.9468, std=3.9267
+2026-03-09 20:28:29,392 [INFO] Baseline updated for channel 'wind_speed': count=1500, mean=9.9832, std=3.1875
+2026-03-09 20:28:29,393 [INFO] Z-score check for 'temperature': 2 flags (threshold=3.0)
+2026-03-09 20:28:29,394 [INFO] Z-score check for 'humidity': 2 flags (threshold=3.0)
+2026-03-09 20:28:29,395 [INFO] Z-score check for 'pressure': 1 flags (threshold=3.0)
+2026-03-09 20:28:29,396 [INFO] Z-score check for 'wind_speed': 0 flags (threshold=3.0)
+2026-03-09 20:28:29,545 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:28:29,547 [INFO] Detection complete: 6/100 rows flagged as anomalies
+2026-03-09 20:28:29,577 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T202827.csv
+2026-03-09 20:28:29,605 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:28:29,632 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:28:29,657 [INFO] Processing complete for raw/sensors_20260309T202827.csv: 6/100 anomalies flagged. Summary written to processed/sensors_20260309T202827_summary.json
+2026-03-09 20:29:30,607 [INFO] Received SNS message type: Notification
+2026-03-09 20:29:30,607 [INFO] New file arrived: raw/sensors_20260309T202928.csv — dispatching background task
+2026-03-09 20:29:30,609 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T202928.csv
+2026-03-09 20:29:30,680 [INFO] Loaded 100 rows from raw/sensors_20260309T202928.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:29:30,782 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:29:30,783 [INFO] Baseline updated for channel 'temperature': count=1600, mean=21.9375, std=1.9148
+2026-03-09 20:29:30,783 [INFO] Baseline updated for channel 'humidity': count=1600, mean=54.7345, std=6.4486
+2026-03-09 20:29:30,783 [INFO] Baseline updated for channel 'pressure': count=1600, mean=1012.9725, std=3.9102
+2026-03-09 20:29:30,784 [INFO] Baseline updated for channel 'wind_speed': count=1600, mean=9.9672, std=3.1531
+2026-03-09 20:29:30,785 [INFO] Z-score check for 'temperature': 1 flags (threshold=3.0)
+2026-03-09 20:29:30,786 [INFO] Z-score check for 'humidity': 3 flags (threshold=3.0)
+2026-03-09 20:29:30,787 [INFO] Z-score check for 'pressure': 1 flags (threshold=3.0)
+2026-03-09 20:29:30,788 [INFO] Z-score check for 'wind_speed': 0 flags (threshold=3.0)
+2026-03-09 20:29:30,937 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:29:30,940 [INFO] Detection complete: 7/100 rows flagged as anomalies
+2026-03-09 20:29:30,972 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T202928.csv
+2026-03-09 20:29:31,000 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:29:31,043 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:29:31,073 [INFO] Processing complete for raw/sensors_20260309T202928.csv: 7/100 anomalies flagged. Summary written to processed/sensors_20260309T202928_summary.json
+2026-03-09 20:30:31,074 [INFO] Received SNS message type: Notification
+2026-03-09 20:30:31,074 [INFO] New file arrived: raw/sensors_20260309T203029.csv — dispatching background task
+2026-03-09 20:30:31,076 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T203029.csv
+2026-03-09 20:30:31,155 [INFO] Loaded 100 rows from raw/sensors_20260309T203029.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:30:31,275 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:30:31,276 [INFO] Baseline updated for channel 'temperature': count=1700, mean=21.9390, std=1.8939
+2026-03-09 20:30:31,276 [INFO] Baseline updated for channel 'humidity': count=1700, mean=54.7209, std=6.4450
+2026-03-09 20:30:31,276 [INFO] Baseline updated for channel 'pressure': count=1700, mean=1012.9469, std=3.9211
+2026-03-09 20:30:31,277 [INFO] Baseline updated for channel 'wind_speed': count=1700, mean=9.9925, std=3.1487
+2026-03-09 20:30:31,278 [INFO] Z-score check for 'temperature': 0 flags (threshold=3.0)
+2026-03-09 20:30:31,279 [INFO] Z-score check for 'humidity': 1 flags (threshold=3.0)
+2026-03-09 20:30:31,280 [INFO] Z-score check for 'pressure': 2 flags (threshold=3.0)
+2026-03-09 20:30:31,281 [INFO] Z-score check for 'wind_speed': 2 flags (threshold=3.0)
+2026-03-09 20:30:31,431 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:30:31,433 [INFO] Detection complete: 5/100 rows flagged as anomalies
+2026-03-09 20:30:31,466 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T203029.csv
+2026-03-09 20:30:31,498 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:30:31,553 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:30:31,581 [INFO] Processing complete for raw/sensors_20260309T203029.csv: 5/100 anomalies flagged. Summary written to processed/sensors_20260309T203029_summary.json
+2026-03-09 20:31:31,386 [INFO] Received SNS message type: Notification
+2026-03-09 20:31:31,386 [INFO] New file arrived: raw/sensors_20260309T203129.csv — dispatching background task
+2026-03-09 20:31:31,387 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T203129.csv
+2026-03-09 20:31:31,458 [INFO] Loaded 100 rows from raw/sensors_20260309T203129.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:31:31,530 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:31:31,531 [INFO] Baseline updated for channel 'temperature': count=1800, mean=21.9462, std=1.8730
+2026-03-09 20:31:31,531 [INFO] Baseline updated for channel 'humidity': count=1800, mean=54.7321, std=6.5041
+2026-03-09 20:31:31,532 [INFO] Baseline updated for channel 'pressure': count=1800, mean=1012.9286, std=3.9579
+2026-03-09 20:31:31,532 [INFO] Baseline updated for channel 'wind_speed': count=1800, mean=10.0064, std=3.1725
+2026-03-09 20:31:31,533 [INFO] Z-score check for 'temperature': 0 flags (threshold=3.0)
+2026-03-09 20:31:31,534 [INFO] Z-score check for 'humidity': 2 flags (threshold=3.0)
+2026-03-09 20:31:31,535 [INFO] Z-score check for 'pressure': 3 flags (threshold=3.0)
+2026-03-09 20:31:31,536 [INFO] Z-score check for 'wind_speed': 1 flags (threshold=3.0)
+2026-03-09 20:31:31,689 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:31:31,691 [INFO] Detection complete: 7/100 rows flagged as anomalies
+2026-03-09 20:31:31,726 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T203129.csv
+2026-03-09 20:31:31,755 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:31:31,787 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:31:31,816 [INFO] Processing complete for raw/sensors_20260309T203129.csv: 7/100 anomalies flagged. Summary written to processed/sensors_20260309T203129_summary.json
+2026-03-09 20:32:31,782 [INFO] Received SNS message type: Notification
+2026-03-09 20:32:31,782 [INFO] New file arrived: raw/sensors_20260309T203230.csv — dispatching background task
+2026-03-09 20:32:31,784 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T203230.csv
+2026-03-09 20:32:31,856 [INFO] Loaded 100 rows from raw/sensors_20260309T203230.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:32:31,927 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:32:31,928 [INFO] Baseline updated for channel 'temperature': count=1900, mean=21.9535, std=1.8760
+2026-03-09 20:32:31,928 [INFO] Baseline updated for channel 'humidity': count=1900, mean=54.7323, std=6.4809
+2026-03-09 20:32:31,928 [INFO] Baseline updated for channel 'pressure': count=1900, mean=1012.9401, std=3.9459
+2026-03-09 20:32:31,929 [INFO] Baseline updated for channel 'wind_speed': count=1900, mean=10.0036, std=3.2016
+2026-03-09 20:32:31,930 [INFO] Z-score check for 'temperature': 1 flags (threshold=3.0)
+2026-03-09 20:32:31,931 [INFO] Z-score check for 'humidity': 1 flags (threshold=3.0)
+2026-03-09 20:32:31,932 [INFO] Z-score check for 'pressure': 1 flags (threshold=3.0)
+2026-03-09 20:32:31,933 [INFO] Z-score check for 'wind_speed': 2 flags (threshold=3.0)
+2026-03-09 20:32:32,084 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:32:32,087 [INFO] Detection complete: 5/100 rows flagged as anomalies
+2026-03-09 20:32:32,119 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T203230.csv
+2026-03-09 20:32:32,147 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:32:32,202 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:32:32,234 [INFO] Processing complete for raw/sensors_20260309T203230.csv: 5/100 anomalies flagged. Summary written to processed/sensors_20260309T203230_summary.json
+2026-03-09 20:33:31,666 [INFO] Received SNS message type: Notification
+2026-03-09 20:33:31,666 [INFO] New file arrived: raw/sensors_20260309T203330.csv — dispatching background task
+2026-03-09 20:33:31,667 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T203330.csv
+2026-03-09 20:33:31,742 [INFO] Loaded 100 rows from raw/sensors_20260309T203330.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:33:31,815 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:33:31,816 [INFO] Baseline updated for channel 'temperature': count=2000, mean=21.9549, std=1.8812
+2026-03-09 20:33:31,816 [INFO] Baseline updated for channel 'humidity': count=2000, mean=54.7638, std=6.4823
+2026-03-09 20:33:31,817 [INFO] Baseline updated for channel 'pressure': count=2000, mean=1012.9293, std=3.9334
+2026-03-09 20:33:31,817 [INFO] Baseline updated for channel 'wind_speed': count=2000, mean=10.0265, std=3.2168
+2026-03-09 20:33:31,818 [INFO] Z-score check for 'temperature': 1 flags (threshold=3.0)
+2026-03-09 20:33:31,819 [INFO] Z-score check for 'humidity': 1 flags (threshold=3.0)
+2026-03-09 20:33:31,820 [INFO] Z-score check for 'pressure': 1 flags (threshold=3.0)
+2026-03-09 20:33:31,821 [INFO] Z-score check for 'wind_speed': 2 flags (threshold=3.0)
+2026-03-09 20:33:31,973 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:33:31,975 [INFO] Detection complete: 5/100 rows flagged as anomalies
+2026-03-09 20:33:32,011 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T203330.csv
+2026-03-09 20:33:32,045 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:33:32,078 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:33:32,160 [INFO] Processing complete for raw/sensors_20260309T203330.csv: 5/100 anomalies flagged. Summary written to processed/sensors_20260309T203330_summary.json
+2026-03-09 20:34:32,023 [INFO] Received SNS message type: Notification
+2026-03-09 20:34:32,023 [INFO] New file arrived: raw/sensors_20260309T203430.csv — dispatching background task
+2026-03-09 20:34:32,025 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T203430.csv
+2026-03-09 20:34:32,097 [INFO] Loaded 100 rows from raw/sensors_20260309T203430.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:34:32,167 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:34:32,167 [INFO] Baseline updated for channel 'temperature': count=2100, mean=21.9639, std=1.8631
+2026-03-09 20:34:32,167 [INFO] Baseline updated for channel 'humidity': count=2100, mean=54.7926, std=6.4570
+2026-03-09 20:34:32,168 [INFO] Baseline updated for channel 'pressure': count=2100, mean=1012.9705, std=3.9861
+2026-03-09 20:34:32,168 [INFO] Baseline updated for channel 'wind_speed': count=2100, mean=10.0134, std=3.2011
+2026-03-09 20:34:32,169 [INFO] Z-score check for 'temperature': 0 flags (threshold=3.0)
+2026-03-09 20:34:32,170 [INFO] Z-score check for 'humidity': 1 flags (threshold=3.0)
+2026-03-09 20:34:32,171 [INFO] Z-score check for 'pressure': 3 flags (threshold=3.0)
+2026-03-09 20:34:32,172 [INFO] Z-score check for 'wind_speed': 1 flags (threshold=3.0)
+2026-03-09 20:34:32,323 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:34:32,326 [INFO] Detection complete: 5/100 rows flagged as anomalies
+2026-03-09 20:34:32,361 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T203430.csv
+2026-03-09 20:34:32,415 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:34:32,444 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:34:32,470 [INFO] Processing complete for raw/sensors_20260309T203430.csv: 5/100 anomalies flagged. Summary written to processed/sensors_20260309T203430_summary.json
+2026-03-09 20:35:32,675 [INFO] Received SNS message type: Notification
+2026-03-09 20:35:32,675 [INFO] New file arrived: raw/sensors_20260309T203530.csv — dispatching background task
+2026-03-09 20:35:32,676 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T203530.csv
+2026-03-09 20:35:32,753 [INFO] Loaded 100 rows from raw/sensors_20260309T203530.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:35:32,836 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:35:32,836 [INFO] Baseline updated for channel 'temperature': count=2200, mean=21.9701, std=1.8566
+2026-03-09 20:35:32,837 [INFO] Baseline updated for channel 'humidity': count=2200, mean=54.8223, std=6.3909
+2026-03-09 20:35:32,837 [INFO] Baseline updated for channel 'pressure': count=2200, mean=1012.9670, std=4.0082
+2026-03-09 20:35:32,837 [INFO] Baseline updated for channel 'wind_speed': count=2200, mean=10.0001, std=3.1955
+2026-03-09 20:35:32,839 [INFO] Z-score check for 'temperature': 1 flags (threshold=3.0)
+2026-03-09 20:35:32,840 [INFO] Z-score check for 'humidity': 0 flags (threshold=3.0)
+2026-03-09 20:35:32,841 [INFO] Z-score check for 'pressure': 3 flags (threshold=3.0)
+2026-03-09 20:35:32,841 [INFO] Z-score check for 'wind_speed': 1 flags (threshold=3.0)
+2026-03-09 20:35:32,991 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:35:32,994 [INFO] Detection complete: 6/100 rows flagged as anomalies
+2026-03-09 20:35:33,056 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T203530.csv
+2026-03-09 20:35:33,126 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:35:33,187 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:35:33,216 [INFO] Processing complete for raw/sensors_20260309T203530.csv: 6/100 anomalies flagged. Summary written to processed/sensors_20260309T203530_summary.json
+2026-03-09 20:36:33,120 [INFO] Received SNS message type: Notification
+2026-03-09 20:36:33,120 [INFO] New file arrived: raw/sensors_20260309T203631.csv — dispatching background task
+2026-03-09 20:36:33,122 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T203631.csv
+2026-03-09 20:36:33,195 [INFO] Loaded 100 rows from raw/sensors_20260309T203631.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:36:33,260 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:36:33,261 [INFO] Baseline updated for channel 'temperature': count=2300, mean=21.9712, std=1.9112
+2026-03-09 20:36:33,261 [INFO] Baseline updated for channel 'humidity': count=2300, mean=54.8342, std=6.3339
+2026-03-09 20:36:33,262 [INFO] Baseline updated for channel 'pressure': count=2300, mean=1012.9746, std=4.0047
+2026-03-09 20:36:33,262 [INFO] Baseline updated for channel 'wind_speed': count=2300, mean=9.9967, std=3.1709
+2026-03-09 20:36:33,263 [INFO] Z-score check for 'temperature': 3 flags (threshold=3.0)
+2026-03-09 20:36:33,264 [INFO] Z-score check for 'humidity': 0 flags (threshold=3.0)
+2026-03-09 20:36:33,265 [INFO] Z-score check for 'pressure': 1 flags (threshold=3.0)
+2026-03-09 20:36:33,266 [INFO] Z-score check for 'wind_speed': 1 flags (threshold=3.0)
+2026-03-09 20:36:33,417 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:36:33,420 [INFO] Detection complete: 5/100 rows flagged as anomalies
+2026-03-09 20:36:33,451 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T203631.csv
+2026-03-09 20:36:33,547 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:36:33,584 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:36:33,613 [INFO] Processing complete for raw/sensors_20260309T203631.csv: 5/100 anomalies flagged. Summary written to processed/sensors_20260309T203631_summary.json
+2026-03-09 20:37:33,800 [INFO] Received SNS message type: Notification
+2026-03-09 20:37:33,800 [INFO] New file arrived: raw/sensors_20260309T203731.csv — dispatching background task
+2026-03-09 20:37:33,801 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T203731.csv
+2026-03-09 20:37:33,875 [INFO] Loaded 100 rows from raw/sensors_20260309T203731.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:37:33,950 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:37:33,951 [INFO] Baseline updated for channel 'temperature': count=2400, mean=21.9789, std=1.9036
+2026-03-09 20:37:33,951 [INFO] Baseline updated for channel 'humidity': count=2400, mean=54.8493, std=6.3255
+2026-03-09 20:37:33,951 [INFO] Baseline updated for channel 'pressure': count=2400, mean=1012.9584, std=4.0033
+2026-03-09 20:37:33,952 [INFO] Baseline updated for channel 'wind_speed': count=2400, mean=9.9803, std=3.1455
+2026-03-09 20:37:33,953 [INFO] Z-score check for 'temperature': 1 flags (threshold=3.0)
+2026-03-09 20:37:33,954 [INFO] Z-score check for 'humidity': 2 flags (threshold=3.0)
+2026-03-09 20:37:33,955 [INFO] Z-score check for 'pressure': 2 flags (threshold=3.0)
+2026-03-09 20:37:33,956 [INFO] Z-score check for 'wind_speed': 0 flags (threshold=3.0)
+2026-03-09 20:37:34,106 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:37:34,109 [INFO] Detection complete: 5/100 rows flagged as anomalies
+2026-03-09 20:37:34,165 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T203731.csv
+2026-03-09 20:37:34,196 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:37:34,277 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:37:34,307 [INFO] Processing complete for raw/sensors_20260309T203731.csv: 5/100 anomalies flagged. Summary written to processed/sensors_20260309T203731_summary.json
+2026-03-09 20:38:33,943 [INFO] Received SNS message type: Notification
+2026-03-09 20:38:33,943 [INFO] New file arrived: raw/sensors_20260309T203832.csv — dispatching background task
+2026-03-09 20:38:33,944 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T203832.csv
+2026-03-09 20:38:34,016 [INFO] Loaded 100 rows from raw/sensors_20260309T203832.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:38:34,135 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:38:34,136 [INFO] Baseline updated for channel 'temperature': count=2500, mean=21.9721, std=1.8957
+2026-03-09 20:38:34,136 [INFO] Baseline updated for channel 'humidity': count=2500, mean=54.8067, std=6.4260
+2026-03-09 20:38:34,137 [INFO] Baseline updated for channel 'pressure': count=2500, mean=1012.9385, std=3.9976
+2026-03-09 20:38:34,137 [INFO] Baseline updated for channel 'wind_speed': count=2500, mean=9.9690, std=3.1229
+2026-03-09 20:38:34,138 [INFO] Z-score check for 'temperature': 1 flags (threshold=3.0)
+2026-03-09 20:38:34,139 [INFO] Z-score check for 'humidity': 2 flags (threshold=3.0)
+2026-03-09 20:38:34,140 [INFO] Z-score check for 'pressure': 2 flags (threshold=3.0)
+2026-03-09 20:38:34,141 [INFO] Z-score check for 'wind_speed': 0 flags (threshold=3.0)
+2026-03-09 20:38:34,293 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:38:34,296 [INFO] Detection complete: 5/100 rows flagged as anomalies
+2026-03-09 20:38:34,341 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T203832.csv
+2026-03-09 20:38:34,371 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:38:34,404 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:38:34,435 [INFO] Processing complete for raw/sensors_20260309T203832.csv: 5/100 anomalies flagged. Summary written to processed/sensors_20260309T203832_summary.json
+2026-03-09 20:39:34,624 [INFO] Received SNS message type: Notification
+2026-03-09 20:39:34,624 [INFO] New file arrived: raw/sensors_20260309T203932.csv — dispatching background task
+2026-03-09 20:39:34,625 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T203932.csv
+2026-03-09 20:39:34,702 [INFO] Loaded 100 rows from raw/sensors_20260309T203932.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:39:34,832 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:39:34,832 [INFO] Baseline updated for channel 'temperature': count=2600, mean=21.9657, std=1.9198
+2026-03-09 20:39:34,833 [INFO] Baseline updated for channel 'humidity': count=2600, mean=54.8078, std=6.3974
+2026-03-09 20:39:34,833 [INFO] Baseline updated for channel 'pressure': count=2600, mean=1012.9397, std=3.9837
+2026-03-09 20:39:34,833 [INFO] Baseline updated for channel 'wind_speed': count=2600, mean=9.9531, std=3.0990
+2026-03-09 20:39:34,835 [INFO] Z-score check for 'temperature': 2 flags (threshold=3.0)
+2026-03-09 20:39:34,836 [INFO] Z-score check for 'humidity': 1 flags (threshold=3.0)
+2026-03-09 20:39:34,837 [INFO] Z-score check for 'pressure': 2 flags (threshold=3.0)
+2026-03-09 20:39:34,837 [INFO] Z-score check for 'wind_speed': 0 flags (threshold=3.0)
+2026-03-09 20:39:34,990 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:39:34,993 [INFO] Detection complete: 5/100 rows flagged as anomalies
+2026-03-09 20:39:35,028 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T203932.csv
+2026-03-09 20:39:35,059 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:39:35,091 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:39:35,125 [INFO] Processing complete for raw/sensors_20260309T203932.csv: 5/100 anomalies flagged. Summary written to processed/sensors_20260309T203932_summary.json
+2026-03-09 20:40:35,168 [INFO] Received SNS message type: Notification
+2026-03-09 20:40:35,168 [INFO] New file arrived: raw/sensors_20260309T204032.csv — dispatching background task
+2026-03-09 20:40:35,169 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T204032.csv
+2026-03-09 20:40:35,250 [INFO] Loaded 100 rows from raw/sensors_20260309T204032.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:40:35,338 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:40:35,339 [INFO] Baseline updated for channel 'temperature': count=2700, mean=21.9732, std=1.9093
+2026-03-09 20:40:35,339 [INFO] Baseline updated for channel 'humidity': count=2700, mean=54.8677, std=6.4801
+2026-03-09 20:40:35,340 [INFO] Baseline updated for channel 'pressure': count=2700, mean=1012.9260, std=3.9962
+2026-03-09 20:40:35,340 [INFO] Baseline updated for channel 'wind_speed': count=2700, mean=9.9338, std=3.0877
+2026-03-09 20:40:35,341 [INFO] Z-score check for 'temperature': 0 flags (threshold=3.0)
+2026-03-09 20:40:35,342 [INFO] Z-score check for 'humidity': 2 flags (threshold=3.0)
+2026-03-09 20:40:35,343 [INFO] Z-score check for 'pressure': 2 flags (threshold=3.0)
+2026-03-09 20:40:35,344 [INFO] Z-score check for 'wind_speed': 1 flags (threshold=3.0)
+2026-03-09 20:40:35,494 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:40:35,497 [INFO] Detection complete: 6/100 rows flagged as anomalies
+2026-03-09 20:40:35,526 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T204032.csv
+2026-03-09 20:40:35,552 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:40:35,582 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:40:35,632 [INFO] Processing complete for raw/sensors_20260309T204032.csv: 6/100 anomalies flagged. Summary written to processed/sensors_20260309T204032_summary.json
+2026-03-09 20:41:35,580 [INFO] Received SNS message type: Notification
+2026-03-09 20:41:35,580 [INFO] New file arrived: raw/sensors_20260309T204133.csv — dispatching background task
+2026-03-09 20:41:35,581 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T204133.csv
+2026-03-09 20:41:35,656 [INFO] Loaded 100 rows from raw/sensors_20260309T204133.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:41:35,739 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:41:35,740 [INFO] Baseline updated for channel 'temperature': count=2800, mean=21.9715, std=1.9010
+2026-03-09 20:41:35,740 [INFO] Baseline updated for channel 'humidity': count=2800, mean=54.8881, std=6.4534
+2026-03-09 20:41:35,740 [INFO] Baseline updated for channel 'pressure': count=2800, mean=1012.9267, std=4.0154
+2026-03-09 20:41:35,741 [INFO] Baseline updated for channel 'wind_speed': count=2800, mean=9.9345, std=3.0664
+2026-03-09 20:41:35,742 [INFO] Z-score check for 'temperature': 0 flags (threshold=3.0)
+2026-03-09 20:41:35,743 [INFO] Z-score check for 'humidity': 1 flags (threshold=3.0)
+2026-03-09 20:41:35,744 [INFO] Z-score check for 'pressure': 3 flags (threshold=3.0)
+2026-03-09 20:41:35,745 [INFO] Z-score check for 'wind_speed': 1 flags (threshold=3.0)
+2026-03-09 20:41:35,896 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:41:35,899 [INFO] Detection complete: 6/100 rows flagged as anomalies
+2026-03-09 20:41:35,928 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T204133.csv
+2026-03-09 20:41:35,957 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:41:35,983 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:41:36,011 [INFO] Processing complete for raw/sensors_20260309T204133.csv: 6/100 anomalies flagged. Summary written to processed/sensors_20260309T204133_summary.json
+2026-03-09 20:42:35,979 [INFO] Received SNS message type: Notification
+2026-03-09 20:42:35,979 [INFO] New file arrived: raw/sensors_20260309T204233.csv — dispatching background task
+2026-03-09 20:42:35,981 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T204233.csv
+2026-03-09 20:42:36,048 [INFO] Loaded 100 rows from raw/sensors_20260309T204233.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:42:36,222 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:42:36,223 [INFO] Baseline updated for channel 'temperature': count=2900, mean=21.9656, std=1.9082
+2026-03-09 20:42:36,223 [INFO] Baseline updated for channel 'humidity': count=2900, mean=54.8669, std=6.4066
+2026-03-09 20:42:36,224 [INFO] Baseline updated for channel 'pressure': count=2900, mean=1012.9374, std=4.0053
+2026-03-09 20:42:36,224 [INFO] Baseline updated for channel 'wind_speed': count=2900, mean=9.9299, std=3.0786
+2026-03-09 20:42:36,225 [INFO] Z-score check for 'temperature': 2 flags (threshold=3.0)
+2026-03-09 20:42:36,226 [INFO] Z-score check for 'humidity': 0 flags (threshold=3.0)
+2026-03-09 20:42:36,227 [INFO] Z-score check for 'pressure': 1 flags (threshold=3.0)
+2026-03-09 20:42:36,228 [INFO] Z-score check for 'wind_speed': 2 flags (threshold=3.0)
+2026-03-09 20:42:36,380 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:42:36,383 [INFO] Detection complete: 5/100 rows flagged as anomalies
+2026-03-09 20:42:36,418 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T204233.csv
+2026-03-09 20:42:36,449 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:42:36,481 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:42:36,506 [INFO] Processing complete for raw/sensors_20260309T204233.csv: 5/100 anomalies flagged. Summary written to processed/sensors_20260309T204233_summary.json
+2026-03-09 20:43:36,620 [INFO] Received SNS message type: Notification
+2026-03-09 20:43:36,620 [INFO] New file arrived: raw/sensors_20260309T204334.csv — dispatching background task
+2026-03-09 20:43:36,622 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T204334.csv
+2026-03-09 20:43:36,694 [INFO] Loaded 100 rows from raw/sensors_20260309T204334.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:43:36,771 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:43:36,772 [INFO] Baseline updated for channel 'temperature': count=3000, mean=21.9686, std=1.9223
+2026-03-09 20:43:36,773 [INFO] Baseline updated for channel 'humidity': count=3000, mean=54.8717, std=6.3870
+2026-03-09 20:43:36,773 [INFO] Baseline updated for channel 'pressure': count=3000, mean=1012.9484, std=3.9732
+2026-03-09 20:43:36,773 [INFO] Baseline updated for channel 'wind_speed': count=3000, mean=9.9058, std=3.0935
+2026-03-09 20:43:36,775 [INFO] Z-score check for 'temperature': 2 flags (threshold=3.0)
+2026-03-09 20:43:36,776 [INFO] Z-score check for 'humidity': 1 flags (threshold=3.0)
+2026-03-09 20:43:36,776 [INFO] Z-score check for 'pressure': 0 flags (threshold=3.0)
+2026-03-09 20:43:36,777 [INFO] Z-score check for 'wind_speed': 2 flags (threshold=3.0)
+2026-03-09 20:43:36,928 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:43:36,931 [INFO] Detection complete: 6/100 rows flagged as anomalies
+2026-03-09 20:43:36,965 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T204334.csv
+2026-03-09 20:43:37,001 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:43:37,056 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:43:37,084 [INFO] Processing complete for raw/sensors_20260309T204334.csv: 6/100 anomalies flagged. Summary written to processed/sensors_20260309T204334_summary.json
+2026-03-09 20:44:36,990 [INFO] Received SNS message type: Notification
+2026-03-09 20:44:36,990 [INFO] New file arrived: raw/sensors_20260309T204434.csv — dispatching background task
+2026-03-09 20:44:36,992 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T204434.csv
+2026-03-09 20:44:37,057 [INFO] Loaded 100 rows from raw/sensors_20260309T204434.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:44:37,123 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:44:37,124 [INFO] Baseline updated for channel 'temperature': count=3100, mean=21.9618, std=1.9247
+2026-03-09 20:44:37,124 [INFO] Baseline updated for channel 'humidity': count=3100, mean=54.8946, std=6.3307
+2026-03-09 20:44:37,125 [INFO] Baseline updated for channel 'pressure': count=3100, mean=1012.9538, std=4.0065
+2026-03-09 20:44:37,125 [INFO] Baseline updated for channel 'wind_speed': count=3100, mean=9.9236, std=3.0951
+2026-03-09 20:44:37,126 [INFO] Z-score check for 'temperature': 1 flags (threshold=3.0)
+2026-03-09 20:44:37,127 [INFO] Z-score check for 'humidity': 0 flags (threshold=3.0)
+2026-03-09 20:44:37,128 [INFO] Z-score check for 'pressure': 3 flags (threshold=3.0)
+2026-03-09 20:44:37,129 [INFO] Z-score check for 'wind_speed': 1 flags (threshold=3.0)
+2026-03-09 20:44:37,279 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:44:37,282 [INFO] Detection complete: 6/100 rows flagged as anomalies
+2026-03-09 20:44:37,310 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T204434.csv
+2026-03-09 20:44:37,353 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:44:37,385 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:44:37,413 [INFO] Processing complete for raw/sensors_20260309T204434.csv: 6/100 anomalies flagged. Summary written to processed/sensors_20260309T204434_summary.json
+2026-03-09 20:45:36,773 [INFO] Received SNS message type: Notification
+2026-03-09 20:45:36,773 [INFO] New file arrived: raw/sensors_20260309T204535.csv — dispatching background task
+2026-03-09 20:45:36,774 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T204535.csv
+2026-03-09 20:45:36,848 [INFO] Loaded 100 rows from raw/sensors_20260309T204535.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:45:36,938 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:45:36,938 [INFO] Baseline updated for channel 'temperature': count=3200, mean=21.9683, std=1.9433
+2026-03-09 20:45:36,939 [INFO] Baseline updated for channel 'humidity': count=3200, mean=54.9042, std=6.3005
+2026-03-09 20:45:36,939 [INFO] Baseline updated for channel 'pressure': count=3200, mean=1012.9760, std=4.0111
+2026-03-09 20:45:36,939 [INFO] Baseline updated for channel 'wind_speed': count=3200, mean=9.9379, std=3.0866
+2026-03-09 20:45:36,940 [INFO] Z-score check for 'temperature': 2 flags (threshold=3.0)
+2026-03-09 20:45:36,941 [INFO] Z-score check for 'humidity': 0 flags (threshold=3.0)
+2026-03-09 20:45:36,942 [INFO] Z-score check for 'pressure': 2 flags (threshold=3.0)
+2026-03-09 20:45:36,943 [INFO] Z-score check for 'wind_speed': 1 flags (threshold=3.0)
+2026-03-09 20:45:37,094 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:45:37,096 [INFO] Detection complete: 5/100 rows flagged as anomalies
+2026-03-09 20:45:37,129 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T204535.csv
+2026-03-09 20:45:37,161 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:45:37,191 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:45:37,223 [INFO] Processing complete for raw/sensors_20260309T204535.csv: 5/100 anomalies flagged. Summary written to processed/sensors_20260309T204535_summary.json
+2026-03-09 20:46:38,031 [INFO] Received SNS message type: Notification
+2026-03-09 20:46:38,031 [INFO] New file arrived: raw/sensors_20260309T204635.csv — dispatching background task
+2026-03-09 20:46:38,032 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T204635.csv
+2026-03-09 20:46:38,108 [INFO] Loaded 100 rows from raw/sensors_20260309T204635.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:46:38,208 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:46:38,208 [INFO] Baseline updated for channel 'temperature': count=3300, mean=21.9660, std=1.9381
+2026-03-09 20:46:38,209 [INFO] Baseline updated for channel 'humidity': count=3300, mean=54.8779, std=6.2725
+2026-03-09 20:46:38,209 [INFO] Baseline updated for channel 'pressure': count=3300, mean=1012.9829, std=3.9852
+2026-03-09 20:46:38,209 [INFO] Baseline updated for channel 'wind_speed': count=3300, mean=9.9563, std=3.0773
+2026-03-09 20:46:38,211 [INFO] Z-score check for 'temperature': 2 flags (threshold=3.0)
+2026-03-09 20:46:38,212 [INFO] Z-score check for 'humidity': 2 flags (threshold=3.0)
+2026-03-09 20:46:38,213 [INFO] Z-score check for 'pressure': 1 flags (threshold=3.0)
+2026-03-09 20:46:38,214 [INFO] Z-score check for 'wind_speed': 0 flags (threshold=3.0)
+2026-03-09 20:46:38,368 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:46:38,371 [INFO] Detection complete: 5/100 rows flagged as anomalies
+2026-03-09 20:46:38,400 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T204635.csv
+2026-03-09 20:46:38,430 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:46:38,462 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:46:38,491 [INFO] Processing complete for raw/sensors_20260309T204635.csv: 5/100 anomalies flagged. Summary written to processed/sensors_20260309T204635_summary.json
+2026-03-09 20:47:37,649 [INFO] Received SNS message type: Notification
+2026-03-09 20:47:37,649 [INFO] New file arrived: raw/sensors_20260309T204736.csv — dispatching background task
+2026-03-09 20:47:37,651 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T204736.csv
+2026-03-09 20:47:37,722 [INFO] Loaded 100 rows from raw/sensors_20260309T204736.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:47:37,787 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:47:37,788 [INFO] Baseline updated for channel 'temperature': count=3400, mean=21.9768, std=1.9582
+2026-03-09 20:47:37,788 [INFO] Baseline updated for channel 'humidity': count=3400, mean=54.8925, std=6.2370
+2026-03-09 20:47:37,788 [INFO] Baseline updated for channel 'pressure': count=3400, mean=1012.9745, std=3.9586
+2026-03-09 20:47:37,789 [INFO] Baseline updated for channel 'wind_speed': count=3400, mean=9.9423, std=3.1488
+2026-03-09 20:47:37,790 [INFO] Z-score check for 'temperature': 2 flags (threshold=3.0)
+2026-03-09 20:47:37,791 [INFO] Z-score check for 'humidity': 0 flags (threshold=3.0)
+2026-03-09 20:47:37,792 [INFO] Z-score check for 'pressure': 0 flags (threshold=3.0)
+2026-03-09 20:47:37,793 [INFO] Z-score check for 'wind_speed': 3 flags (threshold=3.0)
+2026-03-09 20:47:37,947 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:47:37,949 [INFO] Detection complete: 5/100 rows flagged as anomalies
+2026-03-09 20:47:37,982 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T204736.csv
+2026-03-09 20:47:38,015 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:47:38,078 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:47:38,115 [INFO] Processing complete for raw/sensors_20260309T204736.csv: 5/100 anomalies flagged. Summary written to processed/sensors_20260309T204736_summary.json
+2026-03-09 20:48:38,210 [INFO] Received SNS message type: Notification
+2026-03-09 20:48:38,210 [INFO] New file arrived: raw/sensors_20260309T204836.csv — dispatching background task
+2026-03-09 20:48:38,211 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T204836.csv
+2026-03-09 20:48:38,287 [INFO] Loaded 100 rows from raw/sensors_20260309T204836.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:48:38,356 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:48:38,356 [INFO] Baseline updated for channel 'temperature': count=3500, mean=21.9752, std=1.9484
+2026-03-09 20:48:38,357 [INFO] Baseline updated for channel 'humidity': count=3500, mean=54.9035, std=6.2151
+2026-03-09 20:48:38,357 [INFO] Baseline updated for channel 'pressure': count=3500, mean=1012.9773, std=3.9365
+2026-03-09 20:48:38,357 [INFO] Baseline updated for channel 'wind_speed': count=3500, mean=9.9416, std=3.1998
+2026-03-09 20:48:38,359 [INFO] Z-score check for 'temperature': 1 flags (threshold=3.0)
+2026-03-09 20:48:38,360 [INFO] Z-score check for 'humidity': 1 flags (threshold=3.0)
+2026-03-09 20:48:38,360 [INFO] Z-score check for 'pressure': 1 flags (threshold=3.0)
+2026-03-09 20:48:38,361 [INFO] Z-score check for 'wind_speed': 2 flags (threshold=3.0)
+2026-03-09 20:48:38,512 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:48:38,515 [INFO] Detection complete: 5/100 rows flagged as anomalies
+2026-03-09 20:48:38,548 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T204836.csv
+2026-03-09 20:48:38,579 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:48:38,705 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:48:38,747 [INFO] Processing complete for raw/sensors_20260309T204836.csv: 5/100 anomalies flagged. Summary written to processed/sensors_20260309T204836_summary.json
+2026-03-09 20:49:38,715 [INFO] Received SNS message type: Notification
+2026-03-09 20:49:38,715 [INFO] New file arrived: raw/sensors_20260309T204936.csv — dispatching background task
+2026-03-09 20:49:38,716 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T204936.csv
+2026-03-09 20:49:38,801 [INFO] Loaded 100 rows from raw/sensors_20260309T204936.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:49:38,872 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:49:38,873 [INFO] Baseline updated for channel 'temperature': count=3600, mean=21.9759, std=1.9412
+2026-03-09 20:49:38,873 [INFO] Baseline updated for channel 'humidity': count=3600, mean=54.9072, std=6.1931
+2026-03-09 20:49:38,873 [INFO] Baseline updated for channel 'pressure': count=3600, mean=1012.9915, std=3.9158
+2026-03-09 20:49:38,874 [INFO] Baseline updated for channel 'wind_speed': count=3600, mean=9.9556, std=3.2574
+2026-03-09 20:49:38,875 [INFO] Z-score check for 'temperature': 1 flags (threshold=3.0)
+2026-03-09 20:49:38,876 [INFO] Z-score check for 'humidity': 0 flags (threshold=3.0)
+2026-03-09 20:49:38,877 [INFO] Z-score check for 'pressure': 0 flags (threshold=3.0)
+2026-03-09 20:49:38,878 [INFO] Z-score check for 'wind_speed': 4 flags (threshold=3.0)
+2026-03-09 20:49:39,032 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:49:39,035 [INFO] Detection complete: 6/100 rows flagged as anomalies
+2026-03-09 20:49:39,070 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T204936.csv
+2026-03-09 20:49:39,104 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:49:39,138 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:49:39,169 [INFO] Processing complete for raw/sensors_20260309T204936.csv: 6/100 anomalies flagged. Summary written to processed/sensors_20260309T204936_summary.json
+2026-03-09 20:50:39,159 [INFO] Received SNS message type: Notification
+2026-03-09 20:50:39,159 [INFO] New file arrived: raw/sensors_20260309T205037.csv — dispatching background task
+2026-03-09 20:50:39,160 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T205037.csv
+2026-03-09 20:50:39,238 [INFO] Loaded 100 rows from raw/sensors_20260309T205037.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:50:39,337 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:50:39,338 [INFO] Baseline updated for channel 'temperature': count=3700, mean=21.9717, std=1.9412
+2026-03-09 20:50:39,338 [INFO] Baseline updated for channel 'humidity': count=3700, mean=54.9162, std=6.1561
+2026-03-09 20:50:39,339 [INFO] Baseline updated for channel 'pressure': count=3700, mean=1012.9917, std=3.9320
+2026-03-09 20:50:39,339 [INFO] Baseline updated for channel 'wind_speed': count=3700, mean=9.9659, std=3.2600
+2026-03-09 20:50:39,340 [INFO] Z-score check for 'temperature': 1 flags (threshold=3.0)
+2026-03-09 20:50:39,341 [INFO] Z-score check for 'humidity': 1 flags (threshold=3.0)
+2026-03-09 20:50:39,342 [INFO] Z-score check for 'pressure': 2 flags (threshold=3.0)
+2026-03-09 20:50:39,343 [INFO] Z-score check for 'wind_speed': 1 flags (threshold=3.0)
+2026-03-09 20:50:39,497 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:50:39,500 [INFO] Detection complete: 5/100 rows flagged as anomalies
+2026-03-09 20:50:39,533 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T205037.csv
+2026-03-09 20:50:39,564 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:50:39,600 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:50:39,632 [INFO] Processing complete for raw/sensors_20260309T205037.csv: 5/100 anomalies flagged. Summary written to processed/sensors_20260309T205037_summary.json
+2026-03-09 20:51:38,919 [INFO] Received SNS message type: Notification
+2026-03-09 20:51:38,919 [INFO] New file arrived: raw/sensors_20260309T205137.csv — dispatching background task
+2026-03-09 20:51:38,921 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T205137.csv
+2026-03-09 20:51:38,998 [INFO] Loaded 100 rows from raw/sensors_20260309T205137.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:51:39,070 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:51:39,071 [INFO] Baseline updated for channel 'temperature': count=3800, mean=21.9700, std=1.9309
+2026-03-09 20:51:39,071 [INFO] Baseline updated for channel 'humidity': count=3800, mean=54.9380, std=6.1375
+2026-03-09 20:51:39,071 [INFO] Baseline updated for channel 'pressure': count=3800, mean=1012.9804, std=3.9206
+2026-03-09 20:51:39,072 [INFO] Baseline updated for channel 'wind_speed': count=3800, mean=9.9659, std=3.2822
+2026-03-09 20:51:39,073 [INFO] Z-score check for 'temperature': 0 flags (threshold=3.0)
+2026-03-09 20:51:39,074 [INFO] Z-score check for 'humidity': 1 flags (threshold=3.0)
+2026-03-09 20:51:39,075 [INFO] Z-score check for 'pressure': 1 flags (threshold=3.0)
+2026-03-09 20:51:39,076 [INFO] Z-score check for 'wind_speed': 3 flags (threshold=3.0)
+2026-03-09 20:51:39,230 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:51:39,232 [INFO] Detection complete: 6/100 rows flagged as anomalies
+2026-03-09 20:51:39,269 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T205137.csv
+2026-03-09 20:51:39,301 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:51:39,330 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:51:39,364 [INFO] Processing complete for raw/sensors_20260309T205137.csv: 6/100 anomalies flagged. Summary written to processed/sensors_20260309T205137_summary.json
+2026-03-09 20:52:39,361 [INFO] Received SNS message type: Notification
+2026-03-09 20:52:39,361 [INFO] New file arrived: raw/sensors_20260309T205237.csv — dispatching background task
+2026-03-09 20:52:39,363 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T205237.csv
+2026-03-09 20:52:39,436 [INFO] Loaded 100 rows from raw/sensors_20260309T205237.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:52:39,510 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:52:39,511 [INFO] Baseline updated for channel 'temperature': count=3900, mean=21.9663, std=1.9312
+2026-03-09 20:52:39,511 [INFO] Baseline updated for channel 'humidity': count=3900, mean=54.9489, std=6.1148
+2026-03-09 20:52:39,511 [INFO] Baseline updated for channel 'pressure': count=3900, mean=1012.9786, std=3.9080
+2026-03-09 20:52:39,512 [INFO] Baseline updated for channel 'wind_speed': count=3900, mean=9.9660, std=3.2729
+2026-03-09 20:52:39,513 [INFO] Z-score check for 'temperature': 2 flags (threshold=3.0)
+2026-03-09 20:52:39,514 [INFO] Z-score check for 'humidity': 0 flags (threshold=3.0)
+2026-03-09 20:52:39,515 [INFO] Z-score check for 'pressure': 2 flags (threshold=3.0)
+2026-03-09 20:52:39,516 [INFO] Z-score check for 'wind_speed': 2 flags (threshold=3.0)
+2026-03-09 20:52:39,667 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:52:39,669 [INFO] Detection complete: 8/100 rows flagged as anomalies
+2026-03-09 20:52:39,702 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T205237.csv
+2026-03-09 20:52:39,737 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:52:39,786 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:52:39,816 [INFO] Processing complete for raw/sensors_20260309T205237.csv: 8/100 anomalies flagged. Summary written to processed/sensors_20260309T205237_summary.json
+2026-03-09 20:53:39,814 [INFO] Received SNS message type: Notification
+2026-03-09 20:53:39,814 [INFO] New file arrived: raw/sensors_20260309T205338.csv — dispatching background task
+2026-03-09 20:53:39,815 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T205338.csv
+2026-03-09 20:53:39,895 [INFO] Loaded 100 rows from raw/sensors_20260309T205338.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:53:39,979 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:53:39,979 [INFO] Baseline updated for channel 'temperature': count=4000, mean=21.9782, std=1.9545
+2026-03-09 20:53:39,980 [INFO] Baseline updated for channel 'humidity': count=4000, mean=54.9701, std=6.1251
+2026-03-09 20:53:39,980 [INFO] Baseline updated for channel 'pressure': count=4000, mean=1012.9671, std=3.8983
+2026-03-09 20:53:39,980 [INFO] Baseline updated for channel 'wind_speed': count=4000, mean=9.9629, std=3.2544
+2026-03-09 20:53:39,982 [INFO] Z-score check for 'temperature': 3 flags (threshold=3.0)
+2026-03-09 20:53:39,983 [INFO] Z-score check for 'humidity': 2 flags (threshold=3.0)
+2026-03-09 20:53:39,984 [INFO] Z-score check for 'pressure': 1 flags (threshold=3.0)
+2026-03-09 20:53:39,985 [INFO] Z-score check for 'wind_speed': 0 flags (threshold=3.0)
+2026-03-09 20:53:40,135 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:53:40,137 [INFO] Detection complete: 6/100 rows flagged as anomalies
+2026-03-09 20:53:40,171 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T205338.csv
+2026-03-09 20:53:40,200 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:53:40,241 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:53:40,281 [INFO] Processing complete for raw/sensors_20260309T205338.csv: 6/100 anomalies flagged. Summary written to processed/sensors_20260309T205338_summary.json
+2026-03-09 20:54:40,342 [INFO] Received SNS message type: Notification
+2026-03-09 20:54:40,342 [INFO] New file arrived: raw/sensors_20260309T205438.csv — dispatching background task
+2026-03-09 20:54:40,343 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T205438.csv
+2026-03-09 20:54:40,415 [INFO] Loaded 100 rows from raw/sensors_20260309T205438.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:54:40,487 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:54:40,487 [INFO] Baseline updated for channel 'temperature': count=4100, mean=21.9786, std=1.9503
+2026-03-09 20:54:40,488 [INFO] Baseline updated for channel 'humidity': count=4100, mean=54.9765, std=6.1772
+2026-03-09 20:54:40,488 [INFO] Baseline updated for channel 'pressure': count=4100, mean=1012.9638, std=3.9008
+2026-03-09 20:54:40,488 [INFO] Baseline updated for channel 'wind_speed': count=4100, mean=9.9613, std=3.2382
+2026-03-09 20:54:40,490 [INFO] Z-score check for 'temperature': 1 flags (threshold=3.0)
+2026-03-09 20:54:40,491 [INFO] Z-score check for 'humidity': 3 flags (threshold=3.0)
+2026-03-09 20:54:40,492 [INFO] Z-score check for 'pressure': 1 flags (threshold=3.0)
+2026-03-09 20:54:40,493 [INFO] Z-score check for 'wind_speed': 0 flags (threshold=3.0)
+2026-03-09 20:54:40,643 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:54:40,646 [INFO] Detection complete: 5/100 rows flagged as anomalies
+2026-03-09 20:54:40,676 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T205438.csv
+2026-03-09 20:54:40,704 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:54:40,752 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:54:40,782 [INFO] Processing complete for raw/sensors_20260309T205438.csv: 5/100 anomalies flagged. Summary written to processed/sensors_20260309T205438_summary.json
+2026-03-09 20:55:40,041 [INFO] Received SNS message type: Notification
+2026-03-09 20:55:40,041 [INFO] New file arrived: raw/sensors_20260309T205538.csv — dispatching background task
+2026-03-09 20:55:40,042 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T205538.csv
+2026-03-09 20:55:40,114 [INFO] Loaded 100 rows from raw/sensors_20260309T205538.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:55:40,186 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:55:40,187 [INFO] Baseline updated for channel 'temperature': count=4200, mean=21.9750, std=1.9397
+2026-03-09 20:55:40,187 [INFO] Baseline updated for channel 'humidity': count=4200, mean=54.9652, std=6.1856
+2026-03-09 20:55:40,188 [INFO] Baseline updated for channel 'pressure': count=4200, mean=1012.9707, std=3.8901
+2026-03-09 20:55:40,188 [INFO] Baseline updated for channel 'wind_speed': count=4200, mean=9.9518, std=3.2750
+2026-03-09 20:55:40,189 [INFO] Z-score check for 'temperature': 0 flags (threshold=3.0)
+2026-03-09 20:55:40,190 [INFO] Z-score check for 'humidity': 1 flags (threshold=3.0)
+2026-03-09 20:55:40,191 [INFO] Z-score check for 'pressure': 1 flags (threshold=3.0)
+2026-03-09 20:55:40,192 [INFO] Z-score check for 'wind_speed': 3 flags (threshold=3.0)
+2026-03-09 20:55:40,345 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:55:40,348 [INFO] Detection complete: 5/100 rows flagged as anomalies
+2026-03-09 20:55:40,377 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T205538.csv
+2026-03-09 20:55:40,406 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:55:40,435 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:55:40,465 [INFO] Processing complete for raw/sensors_20260309T205538.csv: 5/100 anomalies flagged. Summary written to processed/sensors_20260309T205538_summary.json
+2026-03-09 20:56:40,727 [INFO] Received SNS message type: Notification
+2026-03-09 20:56:40,727 [INFO] New file arrived: raw/sensors_20260309T205638.csv — dispatching background task
+2026-03-09 20:56:40,728 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T205638.csv
+2026-03-09 20:56:40,800 [INFO] Loaded 100 rows from raw/sensors_20260309T205638.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:56:40,875 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:56:40,876 [INFO] Baseline updated for channel 'temperature': count=4300, mean=21.9722, std=1.9389
+2026-03-09 20:56:40,876 [INFO] Baseline updated for channel 'humidity': count=4300, mean=54.9814, std=6.1707
+2026-03-09 20:56:40,877 [INFO] Baseline updated for channel 'pressure': count=4300, mean=1012.9804, std=3.9017
+2026-03-09 20:56:40,877 [INFO] Baseline updated for channel 'wind_speed': count=4300, mean=9.9505, std=3.2687
+2026-03-09 20:56:40,878 [INFO] Z-score check for 'temperature': 1 flags (threshold=3.0)
+2026-03-09 20:56:40,879 [INFO] Z-score check for 'humidity': 1 flags (threshold=3.0)
+2026-03-09 20:56:40,880 [INFO] Z-score check for 'pressure': 2 flags (threshold=3.0)
+2026-03-09 20:56:40,881 [INFO] Z-score check for 'wind_speed': 1 flags (threshold=3.0)
+2026-03-09 20:56:41,038 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:56:41,041 [INFO] Detection complete: 5/100 rows flagged as anomalies
+2026-03-09 20:56:41,109 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T205638.csv
+2026-03-09 20:56:41,146 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:56:41,183 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:56:41,213 [INFO] Processing complete for raw/sensors_20260309T205638.csv: 5/100 anomalies flagged. Summary written to processed/sensors_20260309T205638_summary.json
+2026-03-09 20:57:41,057 [INFO] Received SNS message type: Notification
+2026-03-09 20:57:41,057 [INFO] New file arrived: raw/sensors_20260309T205739.csv — dispatching background task
+2026-03-09 20:57:41,058 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T205739.csv
+2026-03-09 20:57:41,129 [INFO] Loaded 100 rows from raw/sensors_20260309T205739.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:57:41,215 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:57:41,216 [INFO] Baseline updated for channel 'temperature': count=4400, mean=21.9789, std=1.9569
+2026-03-09 20:57:41,216 [INFO] Baseline updated for channel 'humidity': count=4400, mean=55.0035, std=6.1584
+2026-03-09 20:57:41,217 [INFO] Baseline updated for channel 'pressure': count=4400, mean=1012.9781, std=3.8764
+2026-03-09 20:57:41,217 [INFO] Baseline updated for channel 'wind_speed': count=4400, mean=9.9551, std=3.2597
+2026-03-09 20:57:41,218 [INFO] Z-score check for 'temperature': 3 flags (threshold=3.0)
+2026-03-09 20:57:41,219 [INFO] Z-score check for 'humidity': 1 flags (threshold=3.0)
+2026-03-09 20:57:41,220 [INFO] Z-score check for 'pressure': 0 flags (threshold=3.0)
+2026-03-09 20:57:41,221 [INFO] Z-score check for 'wind_speed': 1 flags (threshold=3.0)
+2026-03-09 20:57:41,373 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:57:41,376 [INFO] Detection complete: 5/100 rows flagged as anomalies
+2026-03-09 20:57:41,417 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T205739.csv
+2026-03-09 20:57:41,458 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:57:41,515 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:57:41,553 [INFO] Processing complete for raw/sensors_20260309T205739.csv: 5/100 anomalies flagged. Summary written to processed/sensors_20260309T205739_summary.json
+2026-03-09 20:58:41,587 [INFO] Received SNS message type: Notification
+2026-03-09 20:58:41,587 [INFO] New file arrived: raw/sensors_20260309T205839.csv — dispatching background task
+2026-03-09 20:58:41,588 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T205839.csv
+2026-03-09 20:58:41,656 [INFO] Loaded 100 rows from raw/sensors_20260309T205839.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:58:41,730 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:58:41,730 [INFO] Baseline updated for channel 'temperature': count=4500, mean=21.9808, std=1.9515
+2026-03-09 20:58:41,731 [INFO] Baseline updated for channel 'humidity': count=4500, mean=55.0028, std=6.1387
+2026-03-09 20:58:41,731 [INFO] Baseline updated for channel 'pressure': count=4500, mean=1012.9894, std=3.8651
+2026-03-09 20:58:41,731 [INFO] Baseline updated for channel 'wind_speed': count=4500, mean=9.9629, std=3.3006
+2026-03-09 20:58:41,733 [INFO] Z-score check for 'temperature': 1 flags (threshold=3.0)
+2026-03-09 20:58:41,734 [INFO] Z-score check for 'humidity': 0 flags (threshold=3.0)
+2026-03-09 20:58:41,735 [INFO] Z-score check for 'pressure': 1 flags (threshold=3.0)
+2026-03-09 20:58:41,736 [INFO] Z-score check for 'wind_speed': 3 flags (threshold=3.0)
+2026-03-09 20:58:41,887 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:58:41,890 [INFO] Detection complete: 5/100 rows flagged as anomalies
+2026-03-09 20:58:41,932 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T205839.csv
+2026-03-09 20:58:41,961 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:58:42,003 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:58:42,038 [INFO] Processing complete for raw/sensors_20260309T205839.csv: 5/100 anomalies flagged. Summary written to processed/sensors_20260309T205839_summary.json
+2026-03-09 20:59:41,301 [INFO] Received SNS message type: Notification
+2026-03-09 20:59:41,301 [INFO] New file arrived: raw/sensors_20260309T205939.csv — dispatching background task
+2026-03-09 20:59:41,302 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T205939.csv
+2026-03-09 20:59:41,372 [INFO] Loaded 100 rows from raw/sensors_20260309T205939.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 20:59:41,444 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:59:41,445 [INFO] Baseline updated for channel 'temperature': count=4600, mean=21.9853, std=1.9508
+2026-03-09 20:59:41,445 [INFO] Baseline updated for channel 'humidity': count=4600, mean=54.9899, std=6.1493
+2026-03-09 20:59:41,445 [INFO] Baseline updated for channel 'pressure': count=4600, mean=1012.9888, std=3.8628
+2026-03-09 20:59:41,446 [INFO] Baseline updated for channel 'wind_speed': count=4600, mean=9.9553, std=3.3054
+2026-03-09 20:59:41,447 [INFO] Z-score check for 'temperature': 1 flags (threshold=3.0)
+2026-03-09 20:59:41,448 [INFO] Z-score check for 'humidity': 1 flags (threshold=3.0)
+2026-03-09 20:59:41,449 [INFO] Z-score check for 'pressure': 1 flags (threshold=3.0)
+2026-03-09 20:59:41,450 [INFO] Z-score check for 'wind_speed': 2 flags (threshold=3.0)
+2026-03-09 20:59:41,600 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 20:59:41,602 [INFO] Detection complete: 5/100 rows flagged as anomalies
+2026-03-09 20:59:41,635 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T205939.csv
+2026-03-09 20:59:41,705 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 20:59:41,776 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 20:59:41,841 [INFO] Processing complete for raw/sensors_20260309T205939.csv: 5/100 anomalies flagged. Summary written to processed/sensors_20260309T205939_summary.json
+2026-03-09 21:00:41,739 [INFO] Received SNS message type: Notification
+2026-03-09 21:00:41,740 [INFO] New file arrived: raw/sensors_20260309T210040.csv — dispatching background task
+2026-03-09 21:00:41,741 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T210040.csv
+2026-03-09 21:00:41,810 [INFO] Loaded 100 rows from raw/sensors_20260309T210040.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 21:00:41,976 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 21:00:41,977 [INFO] Baseline updated for channel 'temperature': count=4700, mean=21.9882, std=1.9658
+2026-03-09 21:00:41,977 [INFO] Baseline updated for channel 'humidity': count=4700, mean=54.9914, std=6.1478
+2026-03-09 21:00:41,977 [INFO] Baseline updated for channel 'pressure': count=4700, mean=1012.9967, std=3.8439
+2026-03-09 21:00:41,978 [INFO] Baseline updated for channel 'wind_speed': count=4700, mean=9.9598, std=3.2879
+2026-03-09 21:00:41,979 [INFO] Z-score check for 'temperature': 4 flags (threshold=3.0)
+2026-03-09 21:00:41,980 [INFO] Z-score check for 'humidity': 1 flags (threshold=3.0)
+2026-03-09 21:00:41,981 [INFO] Z-score check for 'pressure': 0 flags (threshold=3.0)
+2026-03-09 21:00:41,982 [INFO] Z-score check for 'wind_speed': 0 flags (threshold=3.0)
+2026-03-09 21:00:42,133 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 21:00:42,135 [INFO] Detection complete: 5/100 rows flagged as anomalies
+2026-03-09 21:00:42,166 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T210040.csv
+2026-03-09 21:00:42,199 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 21:00:42,267 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 21:00:42,348 [INFO] Processing complete for raw/sensors_20260309T210040.csv: 5/100 anomalies flagged. Summary written to processed/sensors_20260309T210040_summary.json
+2026-03-09 21:01:42,240 [INFO] Received SNS message type: Notification
+2026-03-09 21:01:42,240 [INFO] New file arrived: raw/sensors_20260309T210140.csv — dispatching background task
+2026-03-09 21:01:42,241 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T210140.csv
+2026-03-09 21:01:42,317 [INFO] Loaded 100 rows from raw/sensors_20260309T210140.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 21:01:42,392 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 21:01:42,393 [INFO] Baseline updated for channel 'temperature': count=4800, mean=21.9859, std=1.9856
+2026-03-09 21:01:42,393 [INFO] Baseline updated for channel 'humidity': count=4800, mean=54.9921, std=6.1381
+2026-03-09 21:01:42,393 [INFO] Baseline updated for channel 'pressure': count=4800, mean=1012.9964, std=3.8493
+2026-03-09 21:01:42,394 [INFO] Baseline updated for channel 'wind_speed': count=4800, mean=9.9573, std=3.2713
+2026-03-09 21:01:42,395 [INFO] Z-score check for 'temperature': 3 flags (threshold=3.0)
+2026-03-09 21:01:42,396 [INFO] Z-score check for 'humidity': 1 flags (threshold=3.0)
+2026-03-09 21:01:42,397 [INFO] Z-score check for 'pressure': 1 flags (threshold=3.0)
+2026-03-09 21:01:42,398 [INFO] Z-score check for 'wind_speed': 0 flags (threshold=3.0)
+2026-03-09 21:01:42,546 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 21:01:42,549 [INFO] Detection complete: 6/100 rows flagged as anomalies
+2026-03-09 21:01:42,581 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T210140.csv
+2026-03-09 21:01:42,610 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 21:01:42,650 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 21:01:42,680 [INFO] Processing complete for raw/sensors_20260309T210140.csv: 6/100 anomalies flagged. Summary written to processed/sensors_20260309T210140_summary.json
+2026-03-09 21:02:42,860 [INFO] Received SNS message type: Notification
+2026-03-09 21:02:42,860 [INFO] New file arrived: raw/sensors_20260309T210241.csv — dispatching background task
+2026-03-09 21:02:42,862 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T210241.csv
+2026-03-09 21:02:42,958 [INFO] Loaded 100 rows from raw/sensors_20260309T210241.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 21:02:43,070 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 21:02:43,071 [INFO] Baseline updated for channel 'temperature': count=4900, mean=21.9846, std=1.9920
+2026-03-09 21:02:43,071 [INFO] Baseline updated for channel 'humidity': count=4900, mean=54.9748, std=6.1544
+2026-03-09 21:02:43,071 [INFO] Baseline updated for channel 'pressure': count=4900, mean=1012.9842, std=3.8346
+2026-03-09 21:02:43,072 [INFO] Baseline updated for channel 'wind_speed': count=4900, mean=9.9598, std=3.2692
+2026-03-09 21:02:43,073 [INFO] Z-score check for 'temperature': 2 flags (threshold=3.0)
+2026-03-09 21:02:43,074 [INFO] Z-score check for 'humidity': 2 flags (threshold=3.0)
+2026-03-09 21:02:43,075 [INFO] Z-score check for 'pressure': 0 flags (threshold=3.0)
+2026-03-09 21:02:43,076 [INFO] Z-score check for 'wind_speed': 1 flags (threshold=3.0)
+2026-03-09 21:02:43,227 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 21:02:43,230 [INFO] Detection complete: 6/100 rows flagged as anomalies
+2026-03-09 21:02:43,282 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T210241.csv
+2026-03-09 21:02:43,315 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 21:02:43,382 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 21:02:43,430 [INFO] Processing complete for raw/sensors_20260309T210241.csv: 6/100 anomalies flagged. Summary written to processed/sensors_20260309T210241_summary.json
+2026-03-09 21:03:43,352 [INFO] Received SNS message type: Notification
+2026-03-09 21:03:43,352 [INFO] New file arrived: raw/sensors_20260309T210341.csv — dispatching background task
+2026-03-09 21:03:43,354 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T210341.csv
+2026-03-09 21:03:43,428 [INFO] Loaded 100 rows from raw/sensors_20260309T210341.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 21:03:43,549 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 21:03:43,550 [INFO] Baseline updated for channel 'temperature': count=5000, mean=21.9844, std=1.9889
+2026-03-09 21:03:43,550 [INFO] Baseline updated for channel 'humidity': count=5000, mean=54.9602, std=6.1496
+2026-03-09 21:03:43,551 [INFO] Baseline updated for channel 'pressure': count=5000, mean=1012.9675, std=3.8361
+2026-03-09 21:03:43,551 [INFO] Baseline updated for channel 'wind_speed': count=5000, mean=9.9567, std=3.2624
+2026-03-09 21:03:43,552 [INFO] Z-score check for 'temperature': 1 flags (threshold=3.0)
+2026-03-09 21:03:43,553 [INFO] Z-score check for 'humidity': 1 flags (threshold=3.0)
+2026-03-09 21:03:43,554 [INFO] Z-score check for 'pressure': 2 flags (threshold=3.0)
+2026-03-09 21:03:43,555 [INFO] Z-score check for 'wind_speed': 1 flags (threshold=3.0)
+2026-03-09 21:03:43,705 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 21:03:43,708 [INFO] Detection complete: 5/100 rows flagged as anomalies
+2026-03-09 21:03:43,738 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T210341.csv
+2026-03-09 21:03:43,768 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 21:03:43,830 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 21:03:43,861 [INFO] Processing complete for raw/sensors_20260309T210341.csv: 5/100 anomalies flagged. Summary written to processed/sensors_20260309T210341_summary.json
+2026-03-09 21:04:43,715 [INFO] Received SNS message type: Notification
+2026-03-09 21:04:43,716 [INFO] New file arrived: raw/sensors_20260309T210441.csv — dispatching background task
+2026-03-09 21:04:43,717 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T210441.csv
+2026-03-09 21:04:43,793 [INFO] Loaded 100 rows from raw/sensors_20260309T210441.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 21:04:43,966 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 21:04:43,967 [INFO] Baseline updated for channel 'temperature': count=5100, mean=21.9916, std=1.9889
+2026-03-09 21:04:43,967 [INFO] Baseline updated for channel 'humidity': count=5100, mean=54.9527, std=6.1351
+2026-03-09 21:04:43,968 [INFO] Baseline updated for channel 'pressure': count=5100, mean=1012.9780, std=3.8224
+2026-03-09 21:04:43,968 [INFO] Baseline updated for channel 'wind_speed': count=5100, mean=9.9507, std=3.2648
+2026-03-09 21:04:43,969 [INFO] Z-score check for 'temperature': 2 flags (threshold=3.0)
+2026-03-09 21:04:43,970 [INFO] Z-score check for 'humidity': 1 flags (threshold=3.0)
+2026-03-09 21:04:43,971 [INFO] Z-score check for 'pressure': 0 flags (threshold=3.0)
+2026-03-09 21:04:43,972 [INFO] Z-score check for 'wind_speed': 2 flags (threshold=3.0)
+2026-03-09 21:04:44,123 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 21:04:44,125 [INFO] Detection complete: 5/100 rows flagged as anomalies
+2026-03-09 21:04:44,162 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T210441.csv
+2026-03-09 21:04:44,206 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 21:04:44,238 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 21:04:44,267 [INFO] Processing complete for raw/sensors_20260309T210441.csv: 5/100 anomalies flagged. Summary written to processed/sensors_20260309T210441_summary.json
+2026-03-09 21:05:44,168 [INFO] Received SNS message type: Notification
+2026-03-09 21:05:44,168 [INFO] New file arrived: raw/sensors_20260309T210542.csv — dispatching background task
+2026-03-09 21:05:44,169 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T210542.csv
+2026-03-09 21:05:44,242 [INFO] Loaded 100 rows from raw/sensors_20260309T210542.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 21:05:44,311 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 21:05:44,312 [INFO] Baseline updated for channel 'temperature': count=5200, mean=21.9931, std=2.0018
+2026-03-09 21:05:44,312 [INFO] Baseline updated for channel 'humidity': count=5200, mean=54.9460, std=6.1081
+2026-03-09 21:05:44,313 [INFO] Baseline updated for channel 'pressure': count=5200, mean=1012.9755, std=3.8081
+2026-03-09 21:05:44,313 [INFO] Baseline updated for channel 'wind_speed': count=5200, mean=9.9672, std=3.2767
+2026-03-09 21:05:44,314 [INFO] Z-score check for 'temperature': 3 flags (threshold=3.0)
+2026-03-09 21:05:44,315 [INFO] Z-score check for 'humidity': 0 flags (threshold=3.0)
+2026-03-09 21:05:44,316 [INFO] Z-score check for 'pressure': 0 flags (threshold=3.0)
+2026-03-09 21:05:44,317 [INFO] Z-score check for 'wind_speed': 2 flags (threshold=3.0)
+2026-03-09 21:05:44,468 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 21:05:44,471 [INFO] Detection complete: 6/100 rows flagged as anomalies
+2026-03-09 21:05:44,502 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T210542.csv
+2026-03-09 21:05:44,531 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 21:05:44,575 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 21:05:44,606 [INFO] Processing complete for raw/sensors_20260309T210542.csv: 6/100 anomalies flagged. Summary written to processed/sensors_20260309T210542_summary.json
+2026-03-09 21:06:44,684 [INFO] Received SNS message type: Notification
+2026-03-09 21:06:44,684 [INFO] New file arrived: raw/sensors_20260309T210642.csv — dispatching background task
+2026-03-09 21:06:44,685 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T210642.csv
+2026-03-09 21:06:44,761 [INFO] Loaded 100 rows from raw/sensors_20260309T210642.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 21:06:44,834 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 21:06:44,835 [INFO] Baseline updated for channel 'temperature': count=5300, mean=21.9937, std=1.9957
+2026-03-09 21:06:44,835 [INFO] Baseline updated for channel 'humidity': count=5300, mean=54.9371, std=6.1261
+2026-03-09 21:06:44,836 [INFO] Baseline updated for channel 'pressure': count=5300, mean=1012.9755, std=3.8315
+2026-03-09 21:06:44,836 [INFO] Baseline updated for channel 'wind_speed': count=5300, mean=9.9768, std=3.2712
+2026-03-09 21:06:44,837 [INFO] Z-score check for 'temperature': 1 flags (threshold=3.0)
+2026-03-09 21:06:44,838 [INFO] Z-score check for 'humidity': 1 flags (threshold=3.0)
+2026-03-09 21:06:44,839 [INFO] Z-score check for 'pressure': 3 flags (threshold=3.0)
+2026-03-09 21:06:44,840 [INFO] Z-score check for 'wind_speed': 1 flags (threshold=3.0)
+2026-03-09 21:06:44,989 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 21:06:44,991 [INFO] Detection complete: 6/100 rows flagged as anomalies
+2026-03-09 21:06:45,047 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T210642.csv
+2026-03-09 21:06:45,085 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 21:06:45,152 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 21:06:45,182 [INFO] Processing complete for raw/sensors_20260309T210642.csv: 6/100 anomalies flagged. Summary written to processed/sensors_20260309T210642_summary.json
+2026-03-09 21:07:45,239 [INFO] Received SNS message type: Notification
+2026-03-09 21:07:45,239 [INFO] New file arrived: raw/sensors_20260309T210743.csv — dispatching background task
+2026-03-09 21:07:45,241 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T210743.csv
+2026-03-09 21:07:45,309 [INFO] Loaded 100 rows from raw/sensors_20260309T210743.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 21:07:45,375 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 21:07:45,376 [INFO] Baseline updated for channel 'temperature': count=5400, mean=22.0030, std=2.0001
+2026-03-09 21:07:45,376 [INFO] Baseline updated for channel 'humidity': count=5400, mean=54.9403, std=6.1151
+2026-03-09 21:07:45,377 [INFO] Baseline updated for channel 'pressure': count=5400, mean=1012.9776, std=3.8218
+2026-03-09 21:07:45,377 [INFO] Baseline updated for channel 'wind_speed': count=5400, mean=9.9786, std=3.2630
+2026-03-09 21:07:45,378 [INFO] Z-score check for 'temperature': 2 flags (threshold=3.0)
+2026-03-09 21:07:45,379 [INFO] Z-score check for 'humidity': 1 flags (threshold=3.0)
+2026-03-09 21:07:45,380 [INFO] Z-score check for 'pressure': 1 flags (threshold=3.0)
+2026-03-09 21:07:45,381 [INFO] Z-score check for 'wind_speed': 1 flags (threshold=3.0)
+2026-03-09 21:07:45,533 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 21:07:45,535 [INFO] Detection complete: 5/100 rows flagged as anomalies
+2026-03-09 21:07:45,569 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T210743.csv
+2026-03-09 21:07:45,603 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 21:07:45,638 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 21:07:45,685 [INFO] Processing complete for raw/sensors_20260309T210743.csv: 5/100 anomalies flagged. Summary written to processed/sensors_20260309T210743_summary.json
+2026-03-09 21:08:44,919 [INFO] Received SNS message type: Notification
+2026-03-09 21:08:44,919 [INFO] New file arrived: raw/sensors_20260309T210843.csv — dispatching background task
+2026-03-09 21:08:44,920 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T210843.csv
+2026-03-09 21:08:44,990 [INFO] Loaded 100 rows from raw/sensors_20260309T210843.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 21:08:45,071 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 21:08:45,072 [INFO] Baseline updated for channel 'temperature': count=5500, mean=22.0073, std=1.9919
+2026-03-09 21:08:45,072 [INFO] Baseline updated for channel 'humidity': count=5500, mean=54.9425, std=6.1678
+2026-03-09 21:08:45,072 [INFO] Baseline updated for channel 'pressure': count=5500, mean=1012.9776, std=3.8217
+2026-03-09 21:08:45,073 [INFO] Baseline updated for channel 'wind_speed': count=5500, mean=9.9782, std=3.2670
+2026-03-09 21:08:45,074 [INFO] Z-score check for 'temperature': 0 flags (threshold=3.0)
+2026-03-09 21:08:45,075 [INFO] Z-score check for 'humidity': 3 flags (threshold=3.0)
+2026-03-09 21:08:45,076 [INFO] Z-score check for 'pressure': 1 flags (threshold=3.0)
+2026-03-09 21:08:45,077 [INFO] Z-score check for 'wind_speed': 1 flags (threshold=3.0)
+2026-03-09 21:08:45,227 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 21:08:45,230 [INFO] Detection complete: 5/100 rows flagged as anomalies
+2026-03-09 21:08:45,260 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T210843.csv
+2026-03-09 21:08:45,292 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 21:08:45,358 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 21:08:45,388 [INFO] Processing complete for raw/sensors_20260309T210843.csv: 5/100 anomalies flagged. Summary written to processed/sensors_20260309T210843_summary.json
+2026-03-09 21:09:45,340 [INFO] Received SNS message type: Notification
+2026-03-09 21:09:45,340 [INFO] New file arrived: raw/sensors_20260309T210943.csv — dispatching background task
+2026-03-09 21:09:45,342 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T210943.csv
+2026-03-09 21:09:45,466 [INFO] Loaded 100 rows from raw/sensors_20260309T210943.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 21:09:45,540 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 21:09:45,541 [INFO] Baseline updated for channel 'temperature': count=5600, mean=22.0048, std=1.9872
+2026-03-09 21:09:45,541 [INFO] Baseline updated for channel 'humidity': count=5600, mean=54.9523, std=6.1589
+2026-03-09 21:09:45,541 [INFO] Baseline updated for channel 'pressure': count=5600, mean=1012.9745, std=3.8185
+2026-03-09 21:09:45,542 [INFO] Baseline updated for channel 'wind_speed': count=5600, mean=9.9704, std=3.2753
+2026-03-09 21:09:45,543 [INFO] Z-score check for 'temperature': 0 flags (threshold=3.0)
+2026-03-09 21:09:45,544 [INFO] Z-score check for 'humidity': 1 flags (threshold=3.0)
+2026-03-09 21:09:45,545 [INFO] Z-score check for 'pressure': 2 flags (threshold=3.0)
+2026-03-09 21:09:45,546 [INFO] Z-score check for 'wind_speed': 2 flags (threshold=3.0)
+2026-03-09 21:09:45,694 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 21:09:45,696 [INFO] Detection complete: 5/100 rows flagged as anomalies
+2026-03-09 21:09:45,731 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T210943.csv
+2026-03-09 21:09:45,758 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 21:09:45,838 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 21:09:45,895 [INFO] Processing complete for raw/sensors_20260309T210943.csv: 5/100 anomalies flagged. Summary written to processed/sensors_20260309T210943_summary.json
+2026-03-09 21:10:45,760 [INFO] Received SNS message type: Notification
+2026-03-09 21:10:45,760 [INFO] New file arrived: raw/sensors_20260309T211043.csv — dispatching background task
+2026-03-09 21:10:45,762 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T211043.csv
+2026-03-09 21:10:45,832 [INFO] Loaded 100 rows from raw/sensors_20260309T211043.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 21:10:45,936 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 21:10:45,936 [INFO] Baseline updated for channel 'temperature': count=5700, mean=22.0011, std=1.9904
+2026-03-09 21:10:45,937 [INFO] Baseline updated for channel 'humidity': count=5700, mean=54.9575, std=6.1543
+2026-03-09 21:10:45,937 [INFO] Baseline updated for channel 'pressure': count=5700, mean=1012.9774, std=3.8030
+2026-03-09 21:10:45,937 [INFO] Baseline updated for channel 'wind_speed': count=5700, mean=9.9736, std=3.2775
+2026-03-09 21:10:45,939 [INFO] Z-score check for 'temperature': 2 flags (threshold=3.0)
+2026-03-09 21:10:45,940 [INFO] Z-score check for 'humidity': 1 flags (threshold=3.0)
+2026-03-09 21:10:45,940 [INFO] Z-score check for 'pressure': 0 flags (threshold=3.0)
+2026-03-09 21:10:45,941 [INFO] Z-score check for 'wind_speed': 2 flags (threshold=3.0)
+2026-03-09 21:10:46,092 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 21:10:46,095 [INFO] Detection complete: 6/100 rows flagged as anomalies
+2026-03-09 21:10:46,123 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T211043.csv
+2026-03-09 21:10:46,162 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 21:10:46,204 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 21:10:46,231 [INFO] Processing complete for raw/sensors_20260309T211043.csv: 6/100 anomalies flagged. Summary written to processed/sensors_20260309T211043_summary.json
+2026-03-09 21:11:45,719 [INFO] Received SNS message type: Notification
+2026-03-09 21:11:45,720 [INFO] New file arrived: raw/sensors_20260309T211144.csv — dispatching background task
+2026-03-09 21:11:45,721 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T211144.csv
+2026-03-09 21:11:45,801 [INFO] Loaded 100 rows from raw/sensors_20260309T211144.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 21:11:45,875 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 21:11:45,876 [INFO] Baseline updated for channel 'temperature': count=5800, mean=21.9989, std=1.9876
+2026-03-09 21:11:45,876 [INFO] Baseline updated for channel 'humidity': count=5800, mean=54.9612, std=6.1313
+2026-03-09 21:11:45,877 [INFO] Baseline updated for channel 'pressure': count=5800, mean=1012.9698, std=3.7988
+2026-03-09 21:11:45,877 [INFO] Baseline updated for channel 'wind_speed': count=5800, mean=9.9808, std=3.2932
+2026-03-09 21:11:45,878 [INFO] Z-score check for 'temperature': 1 flags (threshold=3.0)
+2026-03-09 21:11:45,879 [INFO] Z-score check for 'humidity': 0 flags (threshold=3.0)
+2026-03-09 21:11:45,880 [INFO] Z-score check for 'pressure': 1 flags (threshold=3.0)
+2026-03-09 21:11:45,881 [INFO] Z-score check for 'wind_speed': 3 flags (threshold=3.0)
+2026-03-09 21:11:46,031 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 21:11:46,034 [INFO] Detection complete: 6/100 rows flagged as anomalies
+2026-03-09 21:11:46,077 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T211144.csv
+2026-03-09 21:11:46,110 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 21:11:46,168 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 21:11:46,202 [INFO] Processing complete for raw/sensors_20260309T211144.csv: 6/100 anomalies flagged. Summary written to processed/sensors_20260309T211144_summary.json
+2026-03-09 21:12:46,130 [INFO] Received SNS message type: Notification
+2026-03-09 21:12:46,130 [INFO] New file arrived: raw/sensors_20260309T211244.csv — dispatching background task
+2026-03-09 21:12:46,132 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T211244.csv
+2026-03-09 21:12:46,204 [INFO] Loaded 100 rows from raw/sensors_20260309T211244.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 21:12:46,295 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 21:12:46,296 [INFO] Baseline updated for channel 'temperature': count=5900, mean=21.9999, std=1.9855
+2026-03-09 21:12:46,296 [INFO] Baseline updated for channel 'humidity': count=5900, mean=54.9427, std=6.1322
+2026-03-09 21:12:46,296 [INFO] Baseline updated for channel 'pressure': count=5900, mean=1012.9767, std=3.8034
+2026-03-09 21:12:46,297 [INFO] Baseline updated for channel 'wind_speed': count=5900, mean=9.9869, std=3.2846
+2026-03-09 21:12:46,298 [INFO] Z-score check for 'temperature': 1 flags (threshold=3.0)
+2026-03-09 21:12:46,299 [INFO] Z-score check for 'humidity': 1 flags (threshold=3.0)
+2026-03-09 21:12:46,300 [INFO] Z-score check for 'pressure': 2 flags (threshold=3.0)
+2026-03-09 21:12:46,301 [INFO] Z-score check for 'wind_speed': 1 flags (threshold=3.0)
+2026-03-09 21:12:46,451 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 21:12:46,454 [INFO] Detection complete: 5/100 rows flagged as anomalies
+2026-03-09 21:12:46,484 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T211244.csv
+2026-03-09 21:12:46,510 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 21:12:46,586 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 21:12:46,619 [INFO] Processing complete for raw/sensors_20260309T211244.csv: 5/100 anomalies flagged. Summary written to processed/sensors_20260309T211244_summary.json
+2026-03-09 21:13:46,473 [INFO] Received SNS message type: Notification
+2026-03-09 21:13:46,473 [INFO] New file arrived: raw/sensors_20260309T211344.csv — dispatching background task
+2026-03-09 21:13:46,474 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T211344.csv
+2026-03-09 21:13:46,546 [INFO] Loaded 100 rows from raw/sensors_20260309T211344.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 21:13:46,647 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 21:13:46,647 [INFO] Baseline updated for channel 'temperature': count=6000, mean=22.0021, std=1.9780
+2026-03-09 21:13:46,648 [INFO] Baseline updated for channel 'humidity': count=6000, mean=54.9355, std=6.1419
+2026-03-09 21:13:46,648 [INFO] Baseline updated for channel 'pressure': count=6000, mean=1012.9825, std=3.8563
+2026-03-09 21:13:46,648 [INFO] Baseline updated for channel 'wind_speed': count=6000, mean=9.9873, std=3.2711
+2026-03-09 21:13:46,649 [INFO] Z-score check for 'temperature': 0 flags (threshold=3.0)
+2026-03-09 21:13:46,650 [INFO] Z-score check for 'humidity': 1 flags (threshold=3.0)
+2026-03-09 21:13:46,651 [INFO] Z-score check for 'pressure': 4 flags (threshold=3.0)
+2026-03-09 21:13:46,652 [INFO] Z-score check for 'wind_speed': 0 flags (threshold=3.0)
+2026-03-09 21:13:46,800 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 21:13:46,802 [INFO] Detection complete: 5/100 rows flagged as anomalies
+2026-03-09 21:13:46,845 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T211344.csv
+2026-03-09 21:13:46,880 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 21:13:46,934 [INFO] Log file synced to s3://ds5220-dp1-xbk9fh/logs/anomaly-detection.log
+2026-03-09 21:13:46,962 [INFO] Processing complete for raw/sensors_20260309T211344.csv: 5/100 anomalies flagged. Summary written to processed/sensors_20260309T211344_summary.json
+2026-03-09 21:14:47,063 [INFO] Received SNS message type: Notification
+2026-03-09 21:14:47,063 [INFO] New file arrived: raw/sensors_20260309T211445.csv — dispatching background task
+2026-03-09 21:14:47,064 [INFO] Processing started: s3://ds5220-dp1-xbk9fh/raw/sensors_20260309T211445.csv
+2026-03-09 21:14:47,131 [INFO] Loaded 100 rows from raw/sensors_20260309T211445.csv, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-09 21:14:47,201 [INFO] Baseline loaded from s3://ds5220-dp1-xbk9fh/state/baseline.json
+2026-03-09 21:14:47,201 [INFO] Baseline updated for channel 'temperature': count=6100, mean=21.9970, std=1.9739
+2026-03-09 21:14:47,202 [INFO] Baseline updated for channel 'humidity': count=6100, mean=54.9341, std=6.1201
+2026-03-09 21:14:47,202 [INFO] Baseline updated for channel 'pressure': count=6100, mean=1012.9834, std=3.8724
+2026-03-09 21:14:47,202 [INFO] Baseline updated for channel 'wind_speed': count=6100, mean=9.9838, std=3.2688
+2026-03-09 21:14:47,204 [INFO] Z-score check for 'temperature': 1 flags (threshold=3.0)
+2026-03-09 21:14:47,204 [INFO] Z-score check for 'humidity': 0 flags (threshold=3.0)
+2026-03-09 21:14:47,205 [INFO] Z-score check for 'pressure': 2 flags (threshold=3.0)
+2026-03-09 21:14:47,206 [INFO] Z-score check for 'wind_speed': 2 flags (threshold=3.0)
+2026-03-09 21:14:47,354 [INFO] IsolationForest ran on 100 rows across columns ['temperature', 'humidity', 'pressure', 'wind_speed']. Anomalies detected: 5
+2026-03-09 21:14:47,356 [INFO] Detection complete: 5/100 rows flagged as anomalies
+2026-03-09 21:14:47,389 [INFO] Scored file written to s3://ds5220-dp1-xbk9fh/processed/sensors_20260309T211445.csv
+2026-03-09 21:14:47,422 [INFO] Baseline saved to s3://ds5220-dp1-xbk9fh/state/baseline.json
